@@ -5,11 +5,32 @@
 
 ---
 
-<p align="center">📖 I generaly use <kbd>F5</kbd> to run code with Code Runner, but I also use <kbd>F6</kbd> tu run nim code.</p>
-
 <p align="center">⌨️ I use vim keybindings with the amVim extension. I have used the <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">Vim</a> vscode extension by the past, but the performences issues made me changes for amVim.</p>
 
+<p align="center">📖 I generaly use <kbd>F5</kbd> to run code with Code Runner, but I also use <kbd>F6</kbd> tu run nim code.</p>
+
 ---
+
+### Keyboard shortcuts help
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd>
+  - Open the explorer in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
+  - Open the extension panel in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>g</kbd>
+  - Open the git panel in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>d</kbd>
+  - Open the debuger in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>b</kbd>
+  - Open or close the activity bar.
+- <kbd>ctrl</kbd> + <kbd>p</kbd>
+  - Open a menu where you can choose a file (from your folder) to open.
+- <kbd>ctrl</kbd> + <kbd>w</kbd>
+  - Close the selected file.
+- <kbd>ctrl</kbd> + <kbd>tab</kbd>
+  - Move between opened files.
+- <kbd>ctrl</kbd> + <kbd>k</kbd> and <kbd>ctrl</kbd> + <kbd>o</kbd>
+  - Open a folder.
+
 
 ### Screenshots
 ![](screenshots/Screenshot1.png)
@@ -66,7 +87,6 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-
   // apparence
   "workbench.activityBar.visible": false,
   "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
@@ -90,19 +110,24 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.padding.bottom": 1,
-  "editor.lineNumbers": "relative",
   "editor.padding.top": 1,
+  "editor.lineNumbers": "relative",
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "explorer.compactFolders": false,
   "workbench.iconTheme": "material-icon-theme",
-
+  "workbench.colorTheme": "Monokai +Blue",
   // syncronisation
   "settingsSync.ignoredSettings": [
     "python.pythonPath",
   ],
-
+  "settingsSync.ignoredExtensions": [
+    "neikeq.godot-csharp-vscode",
+    "geequlim.godot-tools",
+    "ms-vscode.mono-debug",
+    "terminal.integrated.fontfamily"
+  ],
   // extensions
   "errorLens.gutterIconsEnabled": true,
   "errorLens.delay": 1,
@@ -170,7 +195,6 @@
   "tabnine.enable": true,
   "amVim.useSystemClipboard": true,
   "csharp.referencesCodeLens.enabled": false,
-  "workbench.colorTheme": "Monokai +Blue",
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
