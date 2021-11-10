@@ -28,7 +28,6 @@
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Dark Github Markdown Preview](https://marketplace.visualstudio.com/items?itemName=ozaki.markdown-github-dark)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-- [French Language Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 - [Jupyter Keymap](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap)
 - [Jupyter Notebook Renderers](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers)
