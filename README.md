@@ -5,9 +5,11 @@
 
 ---
 
-<p align="center">⌨️ I use vim keybindings with the amVim extension. I have used the <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">Vim</a> vscode extension by the past, but the performences issues made me changes for amVim.</p>
+<p align="center">⚙️ I use vim keybindings with the amVim extension. I have used the <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">Vim</a> vscode extension by the past, but the performences issues made me changes for amVim.</p>
 
 <p align="center">📖 I generaly use <kbd>F5</kbd> to run code with Code Runner, but I also use <kbd>F6</kbd> tu run nim code.</p>
+
+<p align="center">⌨️ I use a bunch of shortcuts to improve my fluidity. You can find them below.</p>
 
 ---
 
@@ -42,7 +44,7 @@
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [amVim](https://marketplace.visualstudio.com/items?itemName=auiworks.amvim)
 
-### Keyboard shortcuts help
+### Keyboard shortcuts
 - <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd>
   - Open the explorer in the activity bar.
 - <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
