@@ -11,27 +11,6 @@
 
 ---
 
-### Keyboard shortcuts help
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd>
-  - Open the explorer in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
-  - Open the extension panel in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>g</kbd>
-  - Open the git panel in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>d</kbd>
-  - Open the debuger in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>b</kbd>
-  - Open or close the activity bar.
-- <kbd>ctrl</kbd> + <kbd>p</kbd>
-  - Open a menu where you can choose a file (from your folder) to open.
-- <kbd>ctrl</kbd> + <kbd>w</kbd>
-  - Close the selected file.
-- <kbd>ctrl</kbd> + <kbd>tab</kbd>
-  - Move between opened files.
-- <kbd>ctrl</kbd> + <kbd>k</kbd> and <kbd>ctrl</kbd> + <kbd>o</kbd>
-  - Open a folder.
-
-
 ### Screenshots
 ![](screenshots/Screenshot1.png)
 ![](screenshots/Screenshot2.png)
@@ -62,6 +41,26 @@
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [amVim](https://marketplace.visualstudio.com/items?itemName=auiworks.amvim)
+
+### Keyboard shortcuts help
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd>
+  - Open the explorer in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
+  - Open the extension panel in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>g</kbd>
+  - Open the git panel in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>d</kbd>
+  - Open the debuger in the activity bar.
+- <kbd>ctrl</kbd> + <kbd>b</kbd>
+  - Open or close the activity bar.
+- <kbd>ctrl</kbd> + <kbd>p</kbd>
+  - Open a menu where you can choose a file (from your folder) to open.
+- <kbd>ctrl</kbd> + <kbd>w</kbd>
+  - Close the selected file.
+- <kbd>ctrl</kbd> + <kbd>tab</kbd>
+  - Move between opened files.
+- <kbd>ctrl</kbd> + <kbd>k</kbd> and <kbd>ctrl</kbd> + <kbd>o</kbd>
+  - Open a folder.
 
 ### Settings
 ```json
