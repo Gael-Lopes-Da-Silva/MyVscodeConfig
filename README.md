@@ -5,11 +5,9 @@
 
 ---
 
-<p align="center">🔌 I just want to share my working environment, so here is my vscode configuration. I use vscode because it's simple and elegant. I have tried other editors, by the past, like Sublim Text, Atome, and Neovim, but I just can quit vscode.</p>
+<p align="center">🔌 I just want to share my working environment, so here is my vscode configuration. I have tried other editors by the past like Sublim Text, Atome, and Neovim but I finaly switched to vscode.</p>
 
-<p align="center">⚙️ I use the vim keybindings with the <a href="https://marketplace.visualstudio.com/items?itemName=auiworks.amvim">amVim</a> vscode extension, so if you don't want to use it just diseable the extension. I have used the <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">Vim</a> vscode extension by the past, but the performences issues made me changes for amVim. (it's because of my nvim try, that I decided to use a vim keybinding extension for vscode)</p>
-
-<p align="center">⌨️ I use a bunch of shortcuts to improve my fluidity. You can find them below.</p>
+<p align="center">⚙️ I use the vim keybindings, so if you don't want to use it or if you don't know to use it and just want to use normal vscode keybindings, just diseable the vim extension.</p>
 
 ---
 
@@ -21,18 +19,14 @@
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
 
 ### Extensions
-- [amVim](https://marketplace.visualstudio.com/items?itemName=auiworks.amvim)
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
-- [Code Autocomplete](https://marketplace.visualstudio.com/items?itemName=svipas.code-autocomplete)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
-- [Dark Github Markdown Preview](https://marketplace.visualstudio.com/items?itemName=ozaki.markdown-github-dark)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 - [Jupyter Keymap](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap)
 - [Jupyter Notebook Renderers](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
-- [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox)
 - [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Monokai Accents](https://marketplace.visualstudio.com/items?itemName=tw.monokai-accent)
@@ -40,72 +34,51 @@
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-
-### Keyboard shortcuts
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd>
-  - Open the explorer in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
-  - Open the extension panel in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>g</kbd>
-  - Open the git panel in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>d</kbd>
-  - Open the debuger in the activity bar.
-- <kbd>ctrl</kbd> + <kbd>b</kbd>
-  - Open or close the activity bar.
-- <kbd>ctrl</kbd> + <kbd>p</kbd>
-  - Open a menu where you can choose a file (from your folder) to open.
-- <kbd>ctrl</kbd> + <kbd>w</kbd>
-  - Close the selected file.
-- <kbd>ctrl</kbd> + <kbd>tab</kbd>
-  - Move between opened files.
-- <kbd>ctrl</kbd> + <kbd>k</kbd> and <kbd>ctrl</kbd> + <kbd>o</kbd>
-  - Open a folder.
-- <kbd>f5</kbd>
-  - Debug with code runner extension in the output.
-- <kbd>f6</kbd> (with a nim file open and focused)
-  - Debug a nim program in terminal.
 
 ### Settings
 ~~~json with comments
 {
   // options
   "editor.suggestSelection": "first",
+  "editor.suggest.showIcons": true,
+  "editor.suggest.showFiles": true,
+  "editor.suggest.showFolders": true,
   "editor.autoIndent": "full",
   "editor.autoClosingBrackets": "always",
-  "files.autoSave": "afterDelay",
   "editor.quickSuggestionsDelay": 0,
-  "debug.openDebug": "neverOpen",
-  "debug.internalConsoleOptions": "openOnSessionStart",
-  "debug.saveBeforeStart": "allEditorsInActiveGroup",
-  "debug.terminal.clearBeforeReusing": true,
-  "security.workspace.trust.enabled": false,
-  "editor.suggest.showFiles": true,
-  "explorer.confirmDelete": false,
-  "editor.suggest.showFolders": true,
-  "editor.suggest.showIcons": true,
   "editor.linkedEditing": false,
+  "editor.folding": true,
+  "editor.foldingHighlight": false,
+  "editor.foldingStrategy": "auto",
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "files.insertFinalNewline": true,
+  "files.autoSave": "afterDelay",
+  "files.enableTrash": true,
+  "files.encoding": "utf8",
+  "files.restoreUndoStack": true,
+  "security.workspace.trust.enabled": false,
+  "debug.openDebug": "neverOpen",
+  "debug.terminal.clearBeforeReusing": true,
   "workbench.editor.enablePreview": false,
-  "editor.detectIndentation": true,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  
-  // apparence
   "workbench.activityBar.visible": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.nims": "nimscript"
+  },
+
+  // appearance
   "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
   "editor.cursorWidth": 3,
   "editor.lineHeight": 24,
+  "editor.fontSize": 17,
   "editor.fontFamily": "Cascadia Code, monospace",
-  "terminal.integrated.fontFamily": "Cascadia Code, monospace",
-  "errorLens.fontFamily": "Cascadia Code, monospace",
   "editor.codeLensFontFamily": "Cascadia Code, monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 17,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorBlinking": "solid",
   "editor.renderWhitespace": "selection",
-  "workbench.editor.tabCloseButton": "off",
   "editor.matchBrackets": "never",
   "editor.wordWrap": "on",
   "editor.overviewRulerBorder": false,
@@ -119,84 +92,71 @@
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "explorer.compactFolders": false,
+  "workbench.editor.tabCloseButton": "off",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
 
-  // syncronisation
+  // synchronization
   "settingsSync.ignoredSettings": [
-    "python.pythonPath",
+    "-window.zoomLevel"
   ],
-  
+
   // extensions
   "errorLens.gutterIconsEnabled": true,
   "errorLens.delay": 1,
   "errorLens.followCursor": "closestProblem",
+  "errorLens.fontFamily": "Cascadia Code, monospace",
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "jupyter.askForKernelRestart": false,
+  "notebook.lineNumbers": "on",
+  "nim.enableNimsuggest": true,
+  "nim.lintOnSave": true,
+  "vim.useSystemClipboard": true,
+  "vim.cursorStylePerMode.visual": "",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-w>": false,
+    "<C-b>": false,
+    "<C-z>": false,
+    "<C-y>": false,
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
   "code-runner.clearPreviousOutput": true,
   "code-runner.ignoreSelection": true,
   "code-runner.runInTerminal": false,
   "code-runner.fileDirectoryAsCwd": true,
   "code-runner.preserveFocus": true,
   "code-runner.executorMap": {
-    "javascript": "node",
     "java": "javac $fileName && java $fileNameWithoutExt",
     "c": "gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "cpp": "g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "objective-c": "gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "php": "php",
     "python": "python -u $fileName",
-    "perl": "perl",
-    "perl6": "perl6",
-    "ruby": "ruby",
-    "go": "go run",
-    "lua": "lua",
-    "groovy": "groovy",
     "powershell": "powershell -ExecutionPolicy ByPass -File",
-    "bat": "cmd /c",
-    "shellscript": "bash",
-    "fsharp": "fsi",
+    "bat": "powershell",
+    "shellscript": "powershell",
     "csharp": "dotnet run",
-    "vbscript": "cscript //Nologo",
-    "typescript": "ts-node",
-    "coffeescript": "coffee",
-    "scala": "scala",
-    "swift": "swift",
-    "julia": "julia",
-    "crystal": "crystal",
-    "ocaml": "ocaml",
-    "r": "Rscript",
-    "applescript": "osascript",
-    "clojure": "lein exec",
-    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
-    "rust": "rustc $fileName && $dir$fileNameWithoutExt",
-    "racket": "racket",
-    "scheme": "csi -script",
-    "ahk": "autohotkey",
-    "autoit": "autoit3",
-    "dart": "dart",
-    "pascal": "fpc $fileName && $dir$fileNameWithoutExt",
-    "d": "dmd $fileName && $dir$fileNameWithoutExt",
-    "haskell": "runhaskell",
-    "nim": "nim c -r --verbosity:2 --hints:off $fileName",
-    "lisp": "sbcl --script",
-    "kit": "kitc --run",
-    "v": "v run",
-    "sass": "sass --style expanded",
-    "scss": "scss --style expanded",
-    "less": "lessc $fileName $fileNameWithoutExt.css",
-    "FortranFreeForm": "gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran-modern": "gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran_fixed-form": "gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran": "gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    "nim": "nim compile --run --verbosity:2 --hints:off $fileName",
+    "makefile": "mingw32-make -f",
   },
-  "notebook.lineNumbers": "on",
-  "nim.enableNimsuggest": true,
-  "nim.nimprettyIndent": 2,
-  "tabnine.enable": true,
-  "amVim.useSystemClipboard": true,
-  "git.autofetch": true,
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "jupyter.askForKernelRestart": false,
+  
+  // temporary
+  "window.zoomLevel": 1, // disable to get normal zoom
 }
 ~~~
 
@@ -213,21 +173,13 @@
     },
     {
         "key": "tab",
-        "command": "tab",
-        "when": "editorTextFocus && !editorTabMovesFocus"
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorTabMovesFicus"
     },
     {
         "key": "shift+tab",
         "command": "outdent",
         "when": "editorTextFocus && !editorTabMovesFicus"
     },
-    {
-        "key": "ctrl+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "editor.action.clipboardCopyAction"
-    }
 ]
 ~~~
