@@ -7,7 +7,7 @@
 
 <p align="center">🔌 I just want to share my working environment, so here is my vscode configuration. I have tried other editors by the past like Sublim Text, Atome, and Neovim but I finaly switched to vscode.</p>
 
-<p align="center">⚙️ I use the vim keybindings, so if you don't want to use it or if you don't know to use it and just want to use normal vscode keybindings, just diseable the vim extension.</p>
+<p align="center">⚙️ I use the vim keybindings, so if you don't want to use it or if you don't know how to use it and just want to use normal vscode keybindings, just diseable the vim extension.</p>
 
 ---
 
