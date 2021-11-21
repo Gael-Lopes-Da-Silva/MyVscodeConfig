@@ -42,6 +42,7 @@
 {
   // options
   "editor.suggestSelection": "first",
+  "editor.suggest.preview": true,
   "editor.suggest.showIcons": true,
   "editor.suggest.showFiles": true,
   "editor.suggest.showFolders": true,
@@ -126,17 +127,6 @@
     "<C-z>": false,
     "<C-y>": false,
   },
-  "vim.insertModeKeyBindings": [
-    {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
-    }
-  ],
   "code-runner.clearPreviousOutput": true,
   "code-runner.ignoreSelection": true,
   "code-runner.runInTerminal": false,
@@ -151,12 +141,12 @@
     "bat": "powershell",
     "shellscript": "powershell",
     "csharp": "dotnet run",
-    "nim": "nim compile --run --verbosity:2 --hints:off $fileName",
+    "nim": "nim c -r --verbosity:2 --hints:off $fileName",
     "makefile": "mingw32-make -f",
   },
   
   // temporary
-  "window.zoomLevel": 1, // disable to get normal zoom
+  "window.zoomLevel": 1,
 }
 ~~~
 
@@ -181,5 +171,15 @@
         "command": "outdent",
         "when": "editorTextFocus && !editorTabMovesFicus"
     },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    }
 ]
 ~~~
