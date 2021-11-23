@@ -23,14 +23,9 @@
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-- [Jupyter Keymap](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap)
-- [Jupyter Notebook Renderers](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
-- [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Monokai Accents](https://marketplace.visualstudio.com/items?itemName=tw.monokai-accent)
-- [Nim](https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
@@ -65,10 +60,6 @@
   "debug.terminal.clearBeforeReusing": true,
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.visible": false,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook",
-    "*.nims": "nimscript"
-  },
 
   // appearance
   "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
@@ -81,7 +72,9 @@
   "editor.cursorBlinking": "solid",
   "editor.renderWhitespace": "selection",
   "editor.matchBrackets": "never",
-  "editor.wordWrap": "on",
+  "editor.wordWrap": "off",
+  "editor.guides.indentation": false,
+  "editor.guides.bracketPairs": false,
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.tabSize": 2,
@@ -96,24 +89,31 @@
   "workbench.editor.tabCloseButton": "off",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
+  "workbench.colorCustomizations": {
+    "editorError.foreground":   "#00000000",
+    "editorWarning.foreground": "#00000000",
+    "editorInfo.foreground":    "#00000000"
+  },
 
   // synchronization
   "settingsSync.ignoredSettings": [
     "-window.zoomLevel"
   ],
-
+  
   // extensions
+  "C_Cpp.autoAddFileAssociations": false,
   "errorLens.gutterIconsEnabled": true,
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "info"
+  ],
   "errorLens.delay": 1,
   "errorLens.followCursor": "closestProblem",
   "errorLens.fontFamily": "Cascadia Code, monospace",
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "jupyter.askForKernelRestart": false,
   "notebook.lineNumbers": "on",
-  "nim.enableNimsuggest": true,
-  "nim.lintOnSave": true,
   "vim.useSystemClipboard": true,
   "vim.cursorStylePerMode.visual": "",
   "vim.cursorStylePerMode.normal": "block",
@@ -124,8 +124,6 @@
     "<C-x>": false,
     "<C-w>": false,
     "<C-b>": false,
-    "<C-z>": false,
-    "<C-y>": false,
   },
   "code-runner.clearPreviousOutput": true,
   "code-runner.ignoreSelection": true,
@@ -134,15 +132,10 @@
   "code-runner.preserveFocus": true,
   "code-runner.executorMap": {
     "java": "javac $fileName && java $fileNameWithoutExt",
-    "c": "gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "cpp": "g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "python": "python -u $fileName",
-    "powershell": "powershell -ExecutionPolicy ByPass -File",
-    "bat": "powershell",
-    "shellscript": "powershell",
-    "csharp": "dotnet run",
-    "nim": "nim c -r --verbosity:2 --hints:off $fileName",
-    "makefile": "mingw32-make -f",
+    "cpp": "g++ -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
+    "c": "gcc -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
+    "shellscript": "bash $fileName",
+    "python": "python $fileName",
   },
   
   // temporary
