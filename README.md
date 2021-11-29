@@ -7,7 +7,7 @@
 
 <p align="center">🔌 I just want to share my working environment, so here is my vscode configuration. I have tried other editors by the past like Sublim Text, Atome, and Neovim but I finaly switched to vscode.</p>
 
-<p align="center">⚙️ I use the vim keybindings, so if you don't want to use it or if you don't know how to use it and just want to use normal vscode keybindings, just diseable the vim extension.</p>
+<p align="center">⚙️ I use the emacs keybindings, so if you don't want to use it or if you don't know how to use it and you just want to use normal vscode keybindings, diseable the vim extension.</p>
 
 ---
 
@@ -22,6 +22,7 @@
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- [Emacs](https://marketplace.visualstudio.com/items?itemName=vscodeemacs.emacs)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
@@ -29,7 +30,6 @@
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 
 ### Settings
@@ -50,6 +50,7 @@
   "editor.foldingStrategy": "auto",
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
+  "files.defaultLanguage": "${activeEditorLanguage}",
   "files.insertFinalNewline": true,
   "files.autoSave": "afterDelay",
   "files.enableTrash": true,
@@ -60,8 +61,9 @@
   "debug.terminal.clearBeforeReusing": true,
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.visible": false,
-
+  
   // appearance
+  "window.menuBarVisibility": "hidden",
   "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
   "editor.cursorWidth": 3,
   "editor.lineHeight": 24,
@@ -69,10 +71,11 @@
   "editor.fontFamily": "Cascadia Code, monospace",
   "editor.codeLensFontFamily": "Cascadia Code, monospace",
   "editor.fontLigatures": true,
+  "editor.cursorStyle": "block",
   "editor.cursorBlinking": "solid",
   "editor.renderWhitespace": "selection",
   "editor.matchBrackets": "never",
-  "editor.wordWrap": "off",
+  "editor.wordWrap": "on",
   "editor.guides.indentation": false,
   "editor.guides.bracketPairs": false,
   "editor.overviewRulerBorder": false,
@@ -84,15 +87,16 @@
   "editor.lineNumbers": "relative",
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
   "explorer.compactFolders": false,
-  "workbench.editor.tabCloseButton": "off",
+  "breadcrumbs.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
   "workbench.colorCustomizations": {
     "editorError.foreground":   "#00000000",
     "editorWarning.foreground": "#00000000",
-    "editorInfo.foreground":    "#00000000"
+    "editorInfo.foreground":    "#00000000",
+    "editorCursor.foreground": "#ffd900",
+    "editorLineNumber.activeForeground": "#ffd900"
   },
 
   // synchronization
@@ -114,17 +118,6 @@
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "notebook.lineNumbers": "on",
-  "vim.useSystemClipboard": true,
-  "vim.cursorStylePerMode.visual": "",
-  "vim.cursorStylePerMode.normal": "block",
-  "vim.cursorStylePerMode.insert": "line",
-  "vim.handleKeys": {
-    "<C-c>": false,
-    "<C-v>": false,
-    "<C-x>": false,
-    "<C-w>": false,
-    "<C-b>": false,
-  },
   "code-runner.clearPreviousOutput": true,
   "code-runner.ignoreSelection": true,
   "code-runner.runInTerminal": false,
@@ -132,12 +125,80 @@
   "code-runner.preserveFocus": true,
   "code-runner.executorMap": {
     "java": "javac $fileName && java $fileNameWithoutExt",
-    "cpp": "g++ -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
-    "c": "gcc -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
+    "cpp": "clang++ -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
+    "c": "clang -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
     "shellscript": "bash $fileName",
     "python": "python $fileName",
   },
+  "better-comments.multilineComments": true,
+  "better-comments.tags": [
+    // todo
+    {
+      "tag": "todo",
+      "color": "#FFB900",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+
+    // fixme
+    {
+      "tag": "fixme",
+      "color": "#FF2200",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    
+    // note
+    {
+      "tag": "note",
+      "color": "#48E338",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
   
+    // review
+    {
+      "tag": "review",
+      "color": "#0095FF",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+
+    // deprecated
+    {
+      "tag": "deprecated",
+      "color": "#505050",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+
+    // hack
+    {
+      "tag": "hack",
+      "color": "#CA90E0",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+  ],
+
   // temporary
   "window.zoomLevel": 1,
 }
@@ -164,15 +225,5 @@
         "command": "outdent",
         "when": "editorTextFocus && !editorTabMovesFicus"
     },
-    {
-        "key": "ctrl+j",
-        "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    }
 ]
 ~~~
