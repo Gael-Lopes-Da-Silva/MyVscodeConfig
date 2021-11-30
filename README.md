@@ -27,6 +27,7 @@
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Monokai Accents](https://marketplace.visualstudio.com/items?itemName=tw.monokai-accent)
+- [Nim](https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
@@ -127,6 +128,7 @@
     "java": "javac $fileName && java $fileNameWithoutExt",
     "cpp": "clang++ -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
     "c": "clang -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
+    "nim": "nim compile --run --verbosity:0 --hints:off $fileName",
     "shellscript": "bash $fileName",
     "python": "python $fileName",
   },
@@ -214,16 +216,6 @@
     {
         "key": "ctrl+f5",
         "command": "code-runner.stop"
-    },
-    {
-        "key": "tab",
-        "command": "editor.action.indentLines",
-        "when": "editorTextFocus && !editorTabMovesFicus"
-    },
-    {
-        "key": "shift+tab",
-        "command": "outdent",
-        "when": "editorTextFocus && !editorTabMovesFicus"
     },
 ]
 ~~~
