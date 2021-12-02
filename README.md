@@ -89,9 +89,11 @@
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
-  "breadcrumbs.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
+  "breadcrumbs.enabled": false,
+
+  // custom theming
   "workbench.colorCustomizations": {
     "editorError.foreground":   "#00000000",
     "editorWarning.foreground": "#00000000",
@@ -99,8 +101,44 @@
     "editorCursor.foreground": "#ffd900",
     "editorLineNumber.activeForeground": "#ffd900"
   },
-
-  // synchronization
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": ["", "entity.name.function", "support.function", "support.type.property-name.json", "constant.language", "entity.other.attribute-name", "storage", "variable.parameter", "variable.other.object", "markup.underline.link.markdown", "markup.raw.block.markdown", "markup.heading.markdown", "support.type", "variable.other.constant", "support.class", "support.type.property-name.css", "support.constant"],
+        "settings": {
+          "foreground": "#ffffff"
+        }
+      },
+      {
+        "scope": ["keyword", "storage.type", "keyword.operator", "entity.name.tag", "meta.separator.markdown", "punctuation.definition.list", "constant.numeric", "keyword.operator.logical", "entity.name.type", "punctuation.definition.bold.markdown", "punctuation.definition.italic.markdown", "punctuation.definition.raw.markdown", "markup.fenced_code.block.markdown", "punctuation.definition.heading.markdown"],
+        "settings": {
+          "foreground": "#ffd900"
+        }
+      },
+      {
+        "scope": ["string", "markup.inline.raw.string.markdown", "entity.other.attribute-name.pseudo-element.css", "entity.other.attribute-name.pseudo-class.css"],
+        "settings": {
+          "foreground": "#378b1d"
+        }
+      },
+      {
+        "scope": ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
+        "settings": {
+          "foreground": "#6b6b6b"
+        }
+      }
+    ]
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "rules": {
+      "keyword": "#ffd900",
+      "string": "#378b1d",
+      "type": "#ffffff",
+      "parameter": "#ffffff"
+    }
+  },
+  
+// synchronization
   "settingsSync.ignoredSettings": [
     "-window.zoomLevel"
   ],
@@ -200,7 +238,7 @@
       "italic": false
     },
   ],
-
+  
   // temporary
   "window.zoomLevel": 1,
 }
