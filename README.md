@@ -1,4 +1,4 @@
-<h3 align="center">👋 Hi! This is my vscode configuration</h3>
+<h3 align="center">Here is my vscode configuration</h3>
 <p align="center">
   <a href="https://gael-lopes-da-silva.github.io/MyPortfolio/">Website</a>
 </p>
