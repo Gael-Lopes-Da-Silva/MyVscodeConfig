@@ -1,13 +1,8 @@
-<h3 align="center">Here is my vscode configuration</h3>
-<p align="center">
-  <a href="https://gael-lopes-da-silva.github.io/MyPortfolio/">Website</a>
-</p>
+<h3 align="center">Visual studio code configuration</h3>
 
 ---
 
-<p align="center">🔌 I just want to share my working environment, so here is my vscode configuration. I have tried other editors by the past like Sublim Text, Atome, and Neovim but I finaly switched to vscode.</p>
-
-<p align="center">⚙️ I use the emacs keybindings, so if you don't want to use it or if you don't know how to use it and you just want to use normal vscode keybindings, diseable the vim extension.</p>
+<p align="center">⚙️ I use emacs keybindings, so if you don't want to use it or if you don't know how to use it you can diseable the emacs extension.</p>
 
 ---
 
@@ -19,10 +14,11 @@
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
 
 ### Extensions
+- [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+- [Choose A License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
-- [Emacs](https://marketplace.visualstudio.com/items?itemName=vscodeemacs.emacs)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
@@ -67,7 +63,7 @@
   "window.menuBarVisibility": "hidden",
   "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
   "editor.cursorWidth": 3,
-  "editor.lineHeight": 24,
+  "editor.lineHeight": 20,
   "editor.fontSize": 17,
   "editor.fontFamily": "Cascadia Code, monospace",
   "editor.codeLensFontFamily": "Cascadia Code, monospace",
@@ -88,41 +84,85 @@
   "editor.lineNumbers": "relative",
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
   "explorer.compactFolders": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
-  "breadcrumbs.enabled": false,
-
+  
   // custom theming
   "workbench.colorCustomizations": {
-    "editorError.foreground":   "#00000000",
+    "editorError.foreground": "#00000000",
     "editorWarning.foreground": "#00000000",
-    "editorInfo.foreground":    "#00000000",
+    "editorInfo.foreground": "#00000000",
     "editorCursor.foreground": "#ffd900",
-    "editorLineNumber.activeForeground": "#ffd900"
+    "editorLineNumber.activeForeground": "#ffd900",
+    "editorLink.activeForeground": "#ffffff"
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": ["", "entity.name.function", "support.function", "support.type.property-name.json", "constant.language", "entity.other.attribute-name", "storage", "variable.parameter", "variable.other.object", "markup.underline.link.markdown", "markup.raw.block.markdown", "markup.heading.markdown", "support.type", "variable.other.constant", "support.class", "support.type.property-name.css", "support.constant"],
+        "scope": [
+          "",
+          "entity.name.function",
+          "support.function",
+          "support.type.property-name.json",
+          "constant.language",
+          "entity.other.attribute-name",
+          "storage",
+          "variable.parameter",
+          "variable.other.object",
+          "markup.underline.link.markdown",
+          "markup.raw.block.markdown",
+          "markup.heading.markdown",
+          "support.type",
+          "variable.other.constant",
+          "support.class",
+          "support.type.property-name.css",
+          "support.constant",
+        ],
         "settings": {
           "foreground": "#ffffff"
         }
       },
       {
-        "scope": ["keyword", "storage.type", "keyword.operator", "entity.name.tag", "meta.separator.markdown", "punctuation.definition.list", "constant.numeric", "keyword.operator.logical", "entity.name.type", "punctuation.definition.bold.markdown", "punctuation.definition.italic.markdown", "punctuation.definition.raw.markdown", "markup.fenced_code.block.markdown", "punctuation.definition.heading.markdown"],
+        "scope": [
+          "keyword",
+          "storage.type",
+          "keyword.operator",
+          "entity.name.tag",
+          "meta.separator.markdown",
+          "punctuation.definition.list",
+          "constant.numeric",
+          "keyword.operator.logical",
+          "entity.name.type",
+          "punctuation.definition.bold.markdown",
+          "punctuation.definition.italic.markdown",
+          "punctuation.definition.raw.markdown",
+          "markup.fenced_code.block.markdown",
+          "punctuation.definition.heading.markdown",
+          "markup.quote.markdown",
+        ],
         "settings": {
           "foreground": "#ffd900"
         }
       },
       {
-        "scope": ["string", "markup.inline.raw.string.markdown", "entity.other.attribute-name.pseudo-element.css", "entity.other.attribute-name.pseudo-class.css"],
+        "scope": [
+          "string",
+          "markup.inline.raw.string.markdown",
+          "entity.other.attribute-name.pseudo-element.css",
+          "entity.other.attribute-name.pseudo-class.css"
+        ],
         "settings": {
           "foreground": "#378b1d"
         }
       },
       {
-        "scope": ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
+        "scope": [
+          "punctuation.definition.string.begin",
+          "punctuation.definition.string.end",
+          "comment"
+        ],
         "settings": {
           "foreground": "#6b6b6b"
         }
@@ -134,41 +174,46 @@
       "keyword": "#ffd900",
       "string": "#378b1d",
       "type": "#ffffff",
-      "parameter": "#ffffff"
+      "parameter": "#ffffff",
+      "variable": "#ffffff"
     }
   },
   
-// synchronization
+  // synchronization
   "settingsSync.ignoredSettings": [
     "-window.zoomLevel"
   ],
   
   // extensions
   "C_Cpp.autoAddFileAssociations": false,
+  "notebook.lineNumbers": "on",
+  "errorLens.delay": 1,
+  "errorLens.followCursor": "closestProblem",
+  "errorLens.fontFamily": "Cascadia Code, monospace",
   "errorLens.gutterIconsEnabled": true,
   "errorLens.enabledDiagnosticLevels": [
     "error",
     "info"
   ],
-  "errorLens.delay": 1,
-  "errorLens.followCursor": "closestProblem",
-  "errorLens.fontFamily": "Cascadia Code, monospace",
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "notebook.lineNumbers": "on",
-  "code-runner.clearPreviousOutput": true,
-  "code-runner.ignoreSelection": true,
+  "license.year": "auto",
+  "emacs-mcx.strictEmacsMove": true,
+  "emacs-mcx.cursorMoveOnFindWidget": true,
+  "emacs-mcx.killWholeLine": true,
   "code-runner.runInTerminal": false,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.clearPreviousOutput": true,
   "code-runner.fileDirectoryAsCwd": true,
-  "code-runner.preserveFocus": true,
-  "code-runner.executorMap": {
-    "java": "javac $fileName && java $fileNameWithoutExt",
-    "cpp": "clang++ -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
-    "c": "clang -o $fileNameWithoutExt $fileName && $fileNameWithoutExt",
-    "nim": "nim compile --run --verbosity:0 --hints:off $fileName",
-    "shellscript": "bash $fileName",
-    "python": "python $fileName",
+  "code-runner.executorMapByGlob": {
+    "*.nims": "nim --run --verbosity:0 --hints:off $fileName",
+    "*.nim": "nim compile --run --verbosity:0 --hints:off $fileName",
+    "*.py": "pypy $fileName",
+    "*.sh": "bash $fileName",
+    "*.c": "clang $fileName -o $fileNameWithoutExt && $fileNameWithoutExt",
+    "*.cpp": "clang++ $fileName -o $fileNameWithoutExt && $fileNameWithoutExt",
+    "*.java": "javac $fileName && $fileNameWithoutExt",
   },
   "better-comments.multilineComments": true,
   "better-comments.tags": [
@@ -182,7 +227,7 @@
       "bold": true,
       "italic": false
     },
-
+   
     // fixme
     {
       "tag": "fixme",
@@ -193,7 +238,7 @@
       "bold": true,
       "italic": false
     },
-    
+   
     // note
     {
       "tag": "note",
@@ -204,7 +249,7 @@
       "bold": true,
       "italic": false
     },
-  
+   
     // review
     {
       "tag": "review",
@@ -215,7 +260,7 @@
       "bold": true,
       "italic": false
     },
-
+  
     // deprecated
     {
       "tag": "deprecated",
@@ -226,7 +271,7 @@
       "bold": true,
       "italic": false
     },
-
+    
     // hack
     {
       "tag": "hack",
@@ -239,7 +284,6 @@
     },
   ],
   
-  // temporary
   "window.zoomLevel": 1,
 }
 ~~~
@@ -248,11 +292,11 @@
 ~~~json with comments
 [
     {
-        "key": "f5",
+        "key": "ctrl+shift+r",
         "command": "code-runner.run"
     },
     {
-        "key": "ctrl+f5",
+        "key": "ctrl+shift+t",
         "command": "code-runner.stop"
     },
 ]
