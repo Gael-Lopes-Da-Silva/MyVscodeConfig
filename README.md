@@ -6,17 +6,18 @@
 
 ---
 
-### Screenshots
+### 🖼️ Screenshots
 ![](screenshots/Screenshot1.png)
 ![](screenshots/Screenshot2.png)
 
-### Font
+### 📃 Font
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
 
-### Extensions
+### ⚙️ Extensions
 - [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+- [C#] (https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 - [Choose A License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
@@ -24,20 +25,18 @@
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Monokai Accents](https://marketplace.visualstudio.com/items?itemName=tw.monokai-accent)
 - [Nim](https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode)
+- [NuGet Package Manager GUI] (https://marketplace.visualstudio.com/items?itemName=aliasadidev.nugetpackagemanagergui)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 
-### Settings
+### 🔧 Settings
 ~~~json with comments
 {
   // options
   "editor.suggestSelection": "first",
   "editor.suggest.preview": true,
-  "editor.suggest.showIcons": true,
-  "editor.suggest.showFiles": true,
-  "editor.suggest.showFolders": true,
   "editor.autoIndent": "full",
   "editor.autoClosingBrackets": "always",
   "editor.quickSuggestionsDelay": 0,
@@ -67,7 +66,6 @@
   "editor.fontSize": 17,
   "editor.fontFamily": "Cascadia Code, monospace",
   "editor.codeLensFontFamily": "Cascadia Code, monospace",
-  "editor.fontLigatures": true,
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "solid",
   "editor.renderWhitespace": "selection",
@@ -84,10 +82,13 @@
   "editor.lineNumbers": "relative",
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
   "explorer.compactFolders": false,
+  "breadcrumbs.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, monospace",
+  "terminal.integrated.customGlyphs": true,
+  "terminal.integrated.gpuAcceleration": "auto",
   
   // custom theming
   "workbench.colorCustomizations": {
@@ -119,6 +120,11 @@
           "support.class",
           "support.type.property-name.css",
           "support.constant",
+          "support.function",
+          "entity.name.variable.parameter",
+          "entity.name.type.namespace.cs",
+          "entity.name.type.class.cs",
+          "entity.name.type.class.java",
         ],
         "settings": {
           "foreground": "#ffffff"
@@ -141,6 +147,9 @@
           "markup.fenced_code.block.markdown",
           "punctuation.definition.heading.markdown",
           "markup.quote.markdown",
+          "storage.modifier.cs",
+          "storage.modifier.java",
+          "support.function.builtin.shell",
         ],
         "settings": {
           "foreground": "#ffd900"
@@ -161,7 +170,9 @@
         "scope": [
           "punctuation.definition.string.begin",
           "punctuation.definition.string.end",
-          "comment"
+          "punctuation.definition.char.begin.cs",
+          "punctuation.definition.char.end.cs",
+          "comment",
         ],
         "settings": {
           "foreground": "#6b6b6b"
@@ -185,12 +196,14 @@
   ],
   
   // extensions
+  "csharp.referencesCodeLens.enabled": false,
   "C_Cpp.autoAddFileAssociations": false,
   "notebook.lineNumbers": "on",
   "errorLens.delay": 1,
-  "errorLens.followCursor": "closestProblem",
+  "errorLens.followCursor": "allLines",
   "errorLens.fontFamily": "Cascadia Code, monospace",
   "errorLens.gutterIconsEnabled": true,
+  "errorLens.removeLinebreaks": false,
   "errorLens.enabledDiagnosticLevels": [
     "error",
     "info"
@@ -198,22 +211,23 @@
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
+  "license.author": "Gaël Lopes Da Silva",
   "license.year": "auto",
-  "emacs-mcx.strictEmacsMove": true,
-  "emacs-mcx.cursorMoveOnFindWidget": true,
-  "emacs-mcx.killWholeLine": true,
-  "code-runner.runInTerminal": false,
+  "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
-  "code-runner.clearPreviousOutput": true,
   "code-runner.fileDirectoryAsCwd": true,
+  "code-runner.ignoreSelection": true,
   "code-runner.executorMapByGlob": {
-    "*.nims": "nim --run --verbosity:0 --hints:off $fileName",
-    "*.nim": "nim compile --run --verbosity:0 --hints:off $fileName",
-    "*.py": "pypy $fileName",
-    "*.sh": "bash $fileName",
-    "*.c": "clang $fileName -o $fileNameWithoutExt && $fileNameWithoutExt",
-    "*.cpp": "clang++ $fileName -o $fileNameWithoutExt && $fileNameWithoutExt",
-    "*.java": "javac $fileName && $fileNameWithoutExt",
+    "*.nims": "clear \nnim --run --verbosity:0 --spellSuggest:0 --hints:off $fileName",
+    "*.nim": "clear \nnim compile --run --verbosity:0 --spellSuggest:0 --hints:off $fileName",
+    "*.py": "clear \npypy $fileName",
+    "*.sh": "clear \nbash $fileName",
+    "*.c": "clear \nclang $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "*.cpp": "clear \nclang++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "*.java": "clear \njavac $fileName && java $fileNameWithoutExt",
+    "*.cs": "clear \ndotnet run $fileName",
+    "*.rs": "clear \nrustc $fileName && $dir$fileNameWithoutExt",
+    "*.mgcb": "clear \nmgcb-editor $fileName",
   },
   "better-comments.multilineComments": true,
   "better-comments.tags": [
@@ -227,7 +241,7 @@
       "bold": true,
       "italic": false
     },
-   
+    
     // fixme
     {
       "tag": "fixme",
@@ -238,7 +252,7 @@
       "bold": true,
       "italic": false
     },
-   
+    
     // note
     {
       "tag": "note",
@@ -249,7 +263,7 @@
       "bold": true,
       "italic": false
     },
-   
+    
     // review
     {
       "tag": "review",
@@ -260,7 +274,7 @@
       "bold": true,
       "italic": false
     },
-  
+    
     // deprecated
     {
       "tag": "deprecated",
@@ -288,7 +302,7 @@
 }
 ~~~
 
-### Keybindings
+### ⌨️ Keybindings
 ~~~json with comments
 [
     {
