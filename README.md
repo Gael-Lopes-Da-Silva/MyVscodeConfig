@@ -18,18 +18,20 @@
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+- [C# Extensions](https://marketplace.visualstudio.com/items?itemName=kreativ-software.csharpextensions)
 - [Choose A License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- [dotnet](https://marketplace.visualstudio.com/items?itemName=leo-labs.dotnet)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Monokai Accents](https://marketplace.visualstudio.com/items?itemName=tw.monokai-accent)
 - [Nim](https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode)
-- [NuGet Package Manager GUI](https://marketplace.visualstudio.com/items?itemName=aliasadidev.nugetpackagemanagergui)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [Visual Studio IntelliCode API Usage Exemples](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.intellicode-api-usage-examples)
 
 ### 🔧 Settings
 ~~~json with comments
@@ -38,12 +40,25 @@
   "editor.suggestSelection": "first",
   "editor.suggest.preview": true,
   "editor.autoIndent": "full",
+  "editor.detectIndentation": false,
   "editor.autoClosingBrackets": "always",
   "editor.quickSuggestionsDelay": 0,
   "editor.linkedEditing": false,
   "editor.folding": true,
   "editor.foldingHighlight": false,
   "editor.foldingStrategy": "auto",
+  "editor.autoClosingQuotes": "always",
+  "editor.codeLens": true,
+  "editor.colorDecorators": true,
+  "editor.definitionLinkOpensInPeek": true,
+  "editor.dragAndDrop": false,
+  "editor.emptySelectionClipboard": true,
+  "editor.fastScrollSensitivity": 5,
+  "editor.largeFileOptimizations": true,
+  "editor.lightbulb.enabled": false,
+  "editor.links": true,
+  "editor.mouseWheelZoom": true,
+  "editor.quickSuggestions": {"other": true, "comments": true, "strings": true},
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "files.defaultLanguage": "${activeEditorLanguage}",
@@ -57,9 +72,14 @@
   "debug.terminal.clearBeforeReusing": true,
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.visible": false,
+  "diffEditor.codeLens": true,
+  "diffEditor.wordWrap": "inherit",
   
   // appearance
   "window.menuBarVisibility": "hidden",
+  "window.zoomLevel": 1,
+  "window.dialogStyle": "custom",
+  "window.titleBarStyle": "custom",
   "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
   "editor.cursorWidth": 3,
   "editor.lineHeight": 20,
@@ -69,9 +89,11 @@
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "solid",
   "editor.renderWhitespace": "selection",
-  "editor.matchBrackets": "never",
-  "editor.wordWrap": "on",
-  "editor.guides.indentation": false,
+  "editor.matchBrackets": "always",
+  "editor.wordWrap": "bounded",
+  "editor.wrappingIndent": "same",
+  "editor.wrappingStrategy": "simple",
+  "editor.guides.indentation": true,
   "editor.guides.bracketPairs": false,
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
@@ -86,7 +108,7 @@
   "breadcrumbs.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
-  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, monospace",
+  "terminal.integrated.fontFamily": "Cascadia Code, monospace",
   "terminal.integrated.customGlyphs": true,
   "terminal.integrated.gpuAcceleration": "auto",
   
@@ -190,11 +212,6 @@
     }
   },
   
-  // synchronization
-  "settingsSync.ignoredSettings": [
-    "-window.zoomLevel"
-  ],
-  
   // extensions
   "csharp.referencesCodeLens.enabled": false,
   "C_Cpp.autoAddFileAssociations": false,
@@ -226,10 +243,10 @@
     "*.cpp": "clear \nclang++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "*.java": "clear \njavac $fileName && java $fileNameWithoutExt",
     "*.cs": "clear \ndotnet run $fileName",
-    "*.rs": "clear \nrustc $fileName && $dir$fileNameWithoutExt",
     "*.mgcb": "clear \nmgcb-editor $fileName",
   },
   "better-comments.multilineComments": true,
+  "better-comments.highlightPlainText": true,
   "better-comments.tags": [
     // todo
     {
@@ -297,8 +314,6 @@
       "italic": false
     },
   ],
-  
-  "window.zoomLevel": 1,
 }
 ~~~
 
