@@ -15,23 +15,20 @@
 
 ### ⚙️ Extensions
 - [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
-- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
-- [C# Extensions](https://marketplace.visualstudio.com/items?itemName=kreativ-software.csharpextensions)
-- [Choose A License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
-- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [dotnet](https://marketplace.visualstudio.com/items?itemName=leo-labs.dotnet)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
 - [Monokai Accents](https://marketplace.visualstudio.com/items?itemName=tw.monokai-accent)
-- [Nim](https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-- [Visual Studio IntelliCode API Usage Exemples](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.intellicode-api-usage-examples)
 
 ### 🔧 Settings
 ~~~json with comments
@@ -58,7 +55,7 @@
   "editor.lightbulb.enabled": false,
   "editor.links": true,
   "editor.mouseWheelZoom": true,
-  "editor.quickSuggestions": {"other": true, "comments": true, "strings": true},
+  "editor.unicodeHighlight.invisibleCharacters": false,
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "files.defaultLanguage": "${activeEditorLanguage}",
@@ -82,8 +79,8 @@
   "window.titleBarStyle": "custom",
   "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
   "editor.cursorWidth": 3,
-  "editor.lineHeight": 20,
-  "editor.fontSize": 17,
+  "editor.lineHeight": 21,
+  "editor.fontSize": 18,
   "editor.fontFamily": "Cascadia Code, monospace",
   "editor.codeLensFontFamily": "Cascadia Code, monospace",
   "editor.cursorStyle": "block",
@@ -91,6 +88,7 @@
   "editor.renderWhitespace": "selection",
   "editor.matchBrackets": "always",
   "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 150,
   "editor.wrappingIndent": "same",
   "editor.wrappingStrategy": "simple",
   "editor.guides.indentation": true,
@@ -108,9 +106,10 @@
   "breadcrumbs.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai +Blue",
+  "workbench.productIconTheme": "material-product-icons",
   "terminal.integrated.fontFamily": "Cascadia Code, monospace",
   "terminal.integrated.customGlyphs": true,
-  "terminal.integrated.gpuAcceleration": "auto",
+  "terminal.integrated.gpuAcceleration": "on",
   
   // custom theming
   "workbench.colorCustomizations": {
@@ -182,7 +181,7 @@
           "string",
           "markup.inline.raw.string.markdown",
           "entity.other.attribute-name.pseudo-element.css",
-          "entity.other.attribute-name.pseudo-class.css"
+          "entity.other.attribute-name.pseudo-class.css",
         ],
         "settings": {
           "foreground": "#378b1d"
@@ -214,104 +213,74 @@
   
   // extensions
   "csharp.referencesCodeLens.enabled": false,
-  "C_Cpp.autoAddFileAssociations": false,
-  "notebook.lineNumbers": "on",
+  "command-runner.terminal.autoFocus": true,
+  "command-runner.terminal.cwd": "${fileDirname}",
+  "command-runner.terminal.name": "script",
+  "command-runner.commands": {
+    "C#": "clear \ndotnet run",
+    "C": "clear \nclang ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
+    "C++": "clear \nclang++ ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
+    "Python": "clear \npypy ${fileBasename}",
+    "Java": "clear \njavac ${fileBasename} ; java ${fileBasenameNoExtension}",
+    "Shell": "clear \nbash ${fileBasename}",
+    "MGCB": "clear \nnmgcb-editor ${fileBasename}",
+  },
   "errorLens.delay": 1,
   "errorLens.followCursor": "allLines",
   "errorLens.fontFamily": "Cascadia Code, monospace",
   "errorLens.gutterIconsEnabled": true,
   "errorLens.removeLinebreaks": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "error",
-    "info"
-  ],
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "license.author": "Gaël Lopes Da Silva",
-  "license.year": "auto",
-  "code-runner.runInTerminal": true,
-  "code-runner.saveFileBeforeRun": true,
-  "code-runner.fileDirectoryAsCwd": true,
-  "code-runner.ignoreSelection": true,
-  "code-runner.executorMapByGlob": {
-    "*.nims": "clear \nnim --run --verbosity:0 --spellSuggest:0 --hints:off $fileName",
-    "*.nim": "clear \nnim compile --run --verbosity:0 --spellSuggest:0 --hints:off $fileName",
-    "*.py": "clear \npypy $fileName",
-    "*.sh": "clear \nbash $fileName",
-    "*.c": "clear \nclang $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "*.cpp": "clear \nclang++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "*.java": "clear \njavac $fileName && java $fileNameWithoutExt",
-    "*.cs": "clear \ndotnet run $fileName",
-    "*.mgcb": "clear \nmgcb-editor $fileName",
-  },
-  "better-comments.multilineComments": true,
-  "better-comments.highlightPlainText": true,
-  "better-comments.tags": [
-    // todo
+  "todohighlight.isEnable": true,
+  "todohighlight.isCaseSensitive": false,
+  "todohighlight.maxFilesForSearch": 5120,
+  "todohighlight.include": [
+    "**/*.*",
+  ],
+  "todohighlight.keywords": [
     {
-      "tag": "todo",
-      "color": "#FFB900",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": true,
-      "italic": false
+      "text": "TODO:",
+      "color": "#ecf0f1",
+      "border": "1px solid #e74c3c",
+      "borderRadius": "4px",
+      "backgroundColor": "#e74c3c",
     },
-    
-    // fixme
     {
-      "tag": "fixme",
-      "color": "#FF2200",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": true,
-      "italic": false
+      "text": "FIXME:",
+      "color": "#ecf0f1",
+      "border": "1px solid #f1c40f",
+      "borderRadius": "4px",
+      "backgroundColor": "#f1c40f",
     },
-    
-    // note
     {
-      "tag": "note",
-      "color": "#48E338",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": true,
-      "italic": false
+      "text": "NOTE:",
+      "color": "#ecf0f1",
+      "border": "1px solid #3498db",
+      "borderRadius": "4px",
+      "backgroundColor": "#3498db",
     },
-    
-    // review
     {
-      "tag": "review",
-      "color": "#0095FF",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": true,
-      "italic": false
+      "text": "HACK:",
+      "color": "#ecf0f1",
+      "border": "1px solid #9b59b6",
+      "borderRadius": "4px",
+      "backgroundColor": "#9b59b6",
     },
-    
-    // deprecated
     {
-      "tag": "deprecated",
-      "color": "#505050",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": true,
-      "italic": false
+      "text": "BUG:",
+      "color": "#ecf0f1",
+      "border": "1px solid #2ecc71",
+      "borderRadius": "4px",
+      "backgroundColor": "#2ecc71",
     },
-    
-    // hack
     {
-      "tag": "hack",
-      "color": "#CA90E0",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": true,
-      "italic": false
+      "text": "XXX:",
+      "color": "#ecf0f1",
+      "border": "1px solid #3c3d4d",
+      "borderRadius": "4px",
+      "backgroundColor": "#3c3d4d",
     },
   ],
 }
@@ -321,12 +290,20 @@
 ~~~json with comments
 [
     {
-        "key": "ctrl+shift+r",
-        "command": "code-runner.run"
+      "key": "alt+oem_plus",
+      "command": "editor.action.fontZoomIn"
     },
     {
-        "key": "ctrl+shift+t",
-        "command": "code-runner.stop"
+      "key": "alt+oem_minus",
+      "command": "editor.action.fontZoomOut"
+    },
+    {
+      "key": "ctrl+alt+backspace",
+      "command": "editor.action.fontZoomReset"
+    },
+    {
+      "key": "shift+alt+t",
+      "command": "todohighlight.listAnnotations"
     },
 ]
 ~~~
