@@ -2,7 +2,7 @@
 
 ---
 
-<p align="center">⚙️ I use emacs keybindings, so if you don't want to use it or if you don't know how to use it you can diseable the emacs extension.</p>
+<p align="center">⚙️ I use vim keybindings, so if you don't want to use it or if you don't know how to use it you can diseable the amVim extension.</p>
 
 ---
 
