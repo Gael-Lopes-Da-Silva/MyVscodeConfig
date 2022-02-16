@@ -14,23 +14,23 @@
 ### 📃 Font
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
 
+### 🏞️ Theme
+- [Yellowed](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
+
 ### ⚙️ Extensions
-- [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
+- [amVim](https://marketplace.visualstudio.com/items?itemName=auiworks.amvim)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
+- [dotnet](https://marketplace.visualstudio.com/items?itemName=leo-labs.dotnet)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-
-- [Yellowed](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
 ### 🔧 Settings
 ~~~json with comments
@@ -207,21 +207,32 @@
     "command": "todohighlight.listAnnotations"
   },
 
-  // emacs
+  // vim
   {
-    "key": "ctrl+x f",
-    "command": "emacs-mcx.executeCommandWithPrefixArgument",
-    "args": {
-      "command": "workbench.action.files.openFolder",
-      "when": "openFolderWorkspaceSupport"
-    }
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction"
   },
   {
-    "key": "ctrl+x /",
-    "command": "emacs-mcx.executeCommandWithPrefixArgument",
-    "args": {
-      "command": "redo"
-    }
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction"
+  },
+  {
+    "key": "alt+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+; b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "editor.action.clipboardCopyAction"
   }
 ]
 ~~~
