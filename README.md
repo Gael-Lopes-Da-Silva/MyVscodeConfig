@@ -7,9 +7,9 @@
 ---
 
 ### 🖼️ Screenshots
-![screenshot 1](screenshots/screenshot1.png)
-![screenshot 2](screenshots/screenshot2.png)
-![screenshot 3](screenshots/screenshot3.png)
+![screenshot 1](screenshots/s1.png)
+![screenshot 2](screenshots/s2.png)
+![screenshot 3](screenshots/s3.png)
 
 ### 📃 Font
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
