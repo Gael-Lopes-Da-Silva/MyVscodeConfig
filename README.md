@@ -2,7 +2,7 @@
 
 ---
 
-<p align="center">⚙️ I use vim keybindings, so if you don't want to use it or if you don't know how to use it you can diseable the amVim extension.</p>
+<p align="center">⚙️ This is my configuration for visual studio code. The key bindings can be difficult to understand. You can see with the keybindings.json and the awesome emacs keymap extension.</p>
 
 ---
 
