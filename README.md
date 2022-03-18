@@ -7,9 +7,9 @@
 ---
 
 ### 🖼️ Screenshots
-![](screenshots/Screenshot1.png)
-![](screenshots/Screenshot2.png)
-![](screenshots/Screenshot3.png)
+![screenshot 1](screenshots/Screenshot1.png)
+![screenshot 2](screenshots/Screenshot2.png)
+![screenshot 3](screenshots/Screenshot3.png)
 
 ### 📃 Font
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
@@ -18,15 +18,16 @@
 - [Yellowed](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
 ### ⚙️ Extensions
-- [amVim](https://marketplace.visualstudio.com/items?itemName=auiworks.amvim)
+- [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
+- [Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
-- [dotnet](https://marketplace.visualstudio.com/items?itemName=leo-labs.dotnet)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
+- [Nim](https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode)
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
@@ -35,8 +36,6 @@
 ### 🔧 Settings
 ~~~json with comments
 {
-  // options
-  "breadcrumbs.enabled": false,
   "debug.openDebug": "neverOpen",
   "debug.terminal.clearBeforeReusing": true,
   "diffEditor.codeLens": true,
@@ -51,7 +50,6 @@
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "solid",
   "editor.detectIndentation": false,
-  "editor.definitionLinkOpensInPeek": true,
   "editor.dragAndDrop": false,
   "editor.emptySelectionClipboard": true,
   "editor.folding": true,
@@ -71,7 +69,6 @@
   "editor.letterSpacing": 0.2,
   "editor.lineHeight": 20,
   "editor.lineNumbers": "relative",
-  "editor.mouseWheelZoom": true,
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": false,
@@ -80,6 +77,7 @@
   "editor.quickSuggestionsDelay": 0,
   "editor.renderWhitespace": "selection",
   "editor.renderLineHighlight": "all",
+  "editor.suggestLineHeight": 23,
   "editor.suggestSelection": "first",
   "editor.suggest.preview": true,
   "editor.tabSize": 2,
@@ -95,7 +93,6 @@
   "files.defaultLanguage": "${activeEditorLanguage}",
   "files.enableTrash": true,
   "files.encoding": "utf8",
-  "files.insertFinalNewline": true,
   "files.restoreUndoStack": true,
   "git.autofetch": true,
   "git.confirmSync": false,
@@ -104,10 +101,16 @@
   "terminal.integrated.customGlyphs": true,
   "terminal.integrated.fontFamily": "Cascadia Code, monospace",
   "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.shellIntegration.decorationIcon": "circle-outline",
+  "terminal.integrated.shellIntegration.decorationIconError": "error-small",
+  "terminal.integrated.shellIntegration.decorationIconSuccess": "primitive-dot",
+  "terminal.integrated.shellIntegration.decorationsEnabled": true,
+  "terminal.integrated.shellIntegration.showWelcome": false,
   "window.dialogStyle": "custom",
   "window.menuBarVisibility": "hidden",
   "window.titleBarStyle": "custom",
-  "window.title": "${rootName}${separator}$${dirty}${activeEditorShort}${separator}${appName}",
+  "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${appName}",
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Yellowed",
@@ -118,15 +121,18 @@
   // extensions
   "csharp.referencesCodeLens.enabled": false,
   "command-runner.terminal.autoFocus": true,
+  "command-runner.terminal.autoClear": false,
   "command-runner.terminal.cwd": "${fileDirname}",
   "command-runner.terminal.name": "script",
   "command-runner.commands": {
-    "C": "clear \nclang ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
-    "C#": "clear \ndotnet run",
-    "C++": "clear \nclang++ ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
+    // not simple
+    "C"     : "clear \nclang -Wall -Wextra -pedantic -fno-common -fno-builtin ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
+    "C++"   : "clear \nclang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
+
+    // simple
+    "C#"    : "clear \ndotnet run",
     "Python": "clear \npypy ${fileBasename}",
-    "Java": "clear \njavac ${fileBasename} ; java ${fileBasenameNoExtension}",
-    "Shell": "clear \nbash ${fileBasename}"
+    "Shell" : "clear \nbash ${fileBasename}"
   },
   "errorLens.delay": 1,
   "errorLens.followCursor": "allLines",
@@ -136,50 +142,48 @@
   "todohighlight.isEnable": true,
   "todohighlight.isCaseSensitive": false,
   "todohighlight.maxFilesForSearch": 5120,
-  "todohighlight.include": [
-    "**/*.*"
-  ],
+  "todohighlight.include": ["**/*.*"],
   "todohighlight.keywords": [
     {
-      "text": "TODO:",
-      "color": "#ecf0f1",
-      "border": "1px solid #e74c3c",
-      "borderRadius": "4px",
+      "text"           : "TODO:",
+      "color"          : "#ecf0f1",
+      "border"         : "1px solid #e74c3c",
+      "borderRadius"   : "4px",
       "backgroundColor": "#e74c3c"
     },
     {
-      "text": "FIXME:",
-      "color": "#ecf0f1",
-      "border": "1px solid #f1c40f",
-      "borderRadius": "4px",
+      "text"           : "FIXME:",
+      "color"          : "#ecf0f1",
+      "border"         : "1px solid #f1c40f",
+      "borderRadius"   : "4px",
       "backgroundColor": "#f1c40f"
     },
     {
-      "text": "NOTE:",
-      "color": "#ecf0f1",
-      "border": "1px solid #3498db",
-      "borderRadius": "4px",
+      "text"           : "NOTE:",
+      "color"          : "#ecf0f1",
+      "border"         : "1px solid #3498db",
+      "borderRadius"   : "4px",
       "backgroundColor": "#3498db"
     },
     {
-      "text": "HACK:",
-      "color": "#ecf0f1",
-      "border": "1px solid #9b59b6",
-      "borderRadius": "4px",
+      "text"           : "HACK:",
+      "color"          : "#ecf0f1",
+      "border"         : "1px solid #9b59b6",
+      "borderRadius"   : "4px",
       "backgroundColor": "#9b59b6"
     },
     {
-      "text": "BUG:",
-      "color": "#ecf0f1",
-      "border": "1px solid #2ecc71",
-      "borderRadius": "4px",
+      "text"           : "BUG:",
+      "color"          : "#ecf0f1",
+      "border"         : "1px solid #2ecc71",
+      "borderRadius"   : "4px",
       "backgroundColor": "#2ecc71"
     },
     {
-      "text": "XXX:",
-      "color": "#ecf0f1",
-      "border": "1px solid #3c3d4d",
-      "borderRadius": "4px",
+      "text"           : "XXX:",
+      "color"          : "#ecf0f1",
+      "border"         : "1px solid #3c3d4d",
+      "borderRadius"   : "4px",
       "backgroundColor": "#3c3d4d"
     }
   ]
@@ -199,40 +203,30 @@
     "command": "editor.action.fontZoomOut"
   },
   {
-    "key": "ctrl+alt+backspace",
+    "key": "shift+alt+backspace",
     "command": "editor.action.fontZoomReset"
   },
+  
+  // todo highlight
   {
-    "key": "shift+alt+t",
-    "command": "todohighlight.listAnnotations"
+    "key": "ctrl+x t",
+    "command": "emacs-mcx.executeCommandWithPrefixArgument",
+    "args": {
+      "command": "todohighlight.listAnnotations"
+    }
   },
 
-  // vim
+  // command runner
   {
-    "key": "alt+j",
-    "command": "editor.action.moveLinesDownAction"
+    "key": "f5",
+    "command": "command-runner.run"
   },
   {
-    "key": "alt+k",
-    "command": "editor.action.moveLinesUpAction"
-  },
-  {
-    "key": "alt+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "alt+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+; b",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+c",
-    "command": "editor.action.clipboardCopyAction"
+    "key": "ctrl+x c",
+    "command": "emacs-mcx.executeCommandWithPrefixArgument",
+    "args": {
+      "command": "command-runner.run"
+    }
   }
 ]
 ~~~
