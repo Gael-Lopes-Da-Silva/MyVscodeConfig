@@ -7,15 +7,15 @@
 ---
 
 ### 🖼️ Screenshots
-![screenshot 1](screenshots/s1.png)
-![screenshot 2](screenshots/s2.png)
-![screenshot 3](screenshots/s3.png)
+![](screenshots/s1.png)
+![](screenshots/s2.png)
+![](screenshots/s3.png)
 
 ### 📃 Font
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
 
 ### 🏞️ Theme
-- [Yellowed](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
+- [Yellowed](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
 
 ### ⚙️ Extensions
 - [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
@@ -24,6 +24,7 @@
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Licence Snippets](https://marketplace.visualstudio.com/items?itemName=benemohamed.licence-snippets)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
@@ -99,6 +100,7 @@
   "git.enableSmartCommit": true,
   "security.workspace.trust.enabled": false,
   "terminal.integrated.customGlyphs": true,
+  "terminal.integrated.enableFileLinks": true,
   "terminal.integrated.fontFamily": "Cascadia Code, monospace",
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.shellIntegration.enabled": true,
@@ -107,6 +109,7 @@
   "terminal.integrated.shellIntegration.decorationIconSuccess": "primitive-dot",
   "terminal.integrated.shellIntegration.decorationsEnabled": true,
   "terminal.integrated.shellIntegration.showWelcome": false,
+  "terminal.integrated.showLinkHover": true,
   "window.dialogStyle": "custom",
   "window.menuBarVisibility": "hidden",
   "window.titleBarStyle": "custom",
@@ -126,19 +129,21 @@
   "command-runner.terminal.name": "script",
   "command-runner.commands": {
     // not simple
-    "C"     : "clear \nclang -Wall -Wextra -pedantic -fno-common -fno-builtin ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
-    "C++"   : "clear \nclang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${fileBasename} -o ${fileBasenameNoExtension} ; ./${fileBasenameNoExtension}.exe",
-
+    "C"     : "clear \nclang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
+    "C++"   : "clear \nclang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
+    
     // simple
     "C#"    : "clear \ndotnet run",
-    "Python": "clear \npypy ${fileBasename}",
-    "Shell" : "clear \nbash ${fileBasename}"
+    "Python": "clear \npypy ${file}",
+    "Shell" : "clear \nbash ${file}"
   },
-  "errorLens.delay": 1,
   "errorLens.followCursor": "allLines",
   "errorLens.fontFamily": "Cascadia Code, monospace",
   "errorLens.gutterIconsEnabled": true,
+  "errorLens.messageBackgroundMode": "none",
+  "errorLens.messageTemplate": "$severity: $message",
   "errorLens.removeLinebreaks": false,
+  "errorLens.scrollbarHackEnabled": true,
   "todohighlight.isEnable": true,
   "todohighlight.isCaseSensitive": false,
   "todohighlight.maxFilesForSearch": 5120,
@@ -226,6 +231,29 @@
     "command": "emacs-mcx.executeCommandWithPrefixArgument",
     "args": {
       "command": "command-runner.run"
+    }
+  },
+
+  // error lens
+  {
+    "key": "ctrl+x e",
+    "command": "emacs-mcx.executeCommandWithPrefixArgument",
+    "args": {
+      "command": "errorLens.toggle"
+    }
+  },
+
+  // emacs
+  {
+    "key": "shift+space",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+x ctrl+j",
+    "command": "emacs-mcx.executeCommandWithPrefixArgument",
+    "args": {
+      "command": "workbench.action.terminal.killAll"
     }
   }
 ]
