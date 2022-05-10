@@ -22,6 +22,8 @@
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
+- [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [Licence Snippets](https://marketplace.visualstudio.com/items?itemName=benemohamed.licence-snippets)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
@@ -29,7 +31,6 @@
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
-- [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 
 ### 🔧 Settings
 ~~~json with comments
@@ -41,6 +42,7 @@
   "editor.autoIndent": "full",
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
+  "editor.bracketPairColorization.enabled": false,
   "editor.codeLens": true,
   "editor.colorDecorators": true,
   "editor.cursorWidth": 3,
@@ -65,7 +67,7 @@
   "editor.lightbulb.enabled": false,
   "editor.links": true,
   "editor.letterSpacing": 0.2,
-  "editor.lineHeight": 20,
+  "editor.lineHeight": 21,
   "editor.lineNumbers": "relative",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
@@ -75,7 +77,8 @@
   "editor.quickSuggestionsDelay": 0,
   "editor.renderWhitespace": "selection",
   "editor.renderLineHighlight": "all",
-  "editor.suggestLineHeight": 23,
+  "editor.suggestFontSize": 17,
+  "editor.suggestLineHeight": 22,
   "editor.suggestSelection": "first",
   "editor.suggest.preview": true,
   "editor.tabSize": 2,
@@ -91,6 +94,7 @@
   "files.defaultLanguage": "${activeEditorLanguage}",
   "files.enableTrash": true,
   "files.encoding": "utf8",
+  "files.eol": "\n",
   "files.restoreUndoStack": true,
   "git.autofetch": true,
   "git.confirmSync": false,
@@ -100,6 +104,14 @@
   "terminal.integrated.enableFileLinks": true,
   "terminal.integrated.fontFamily": "Cascadia Code, monospace",
   "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon"  : "terminal-powershell",
+      "args"  : ["-nologo"]
+    }
+  },
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.shellIntegration.decorationIcon": "circle-outline",
   "terminal.integrated.shellIntegration.decorationIconError": "error-small",
@@ -120,19 +132,24 @@
 
   // extensions
   "csharp.referencesCodeLens.enabled": false,
+  "gopls": { "build.experimentalWorkspaceModule": true },
+  "go.toolsManagement.autoUpdate": true,
   "command-runner.terminal.autoFocus": true,
   "command-runner.terminal.autoClear": false,
   "command-runner.terminal.cwd": "${fileDirname}",
   "command-runner.terminal.name": "script",
+  "command-runner.terminal.shellArgs": "-nologo",
   "command-runner.commands": {
     // not simple
-    "C"     : "clear \nclang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
-    "C++"   : "clear \nclang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
-    
+    "C"   : "clang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
+    "C++" : "clang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
+    "Java": "javac ${file} ; if ($?) {java ${fileBasenameNoExtension}}",
+
     // simple
-    "C#"    : "clear \ndotnet run",
-    "Python": "clear \npypy ${file}",
-    "Shell" : "clear \nbash ${file}"
+    "C#"    : "dotnet run",
+    "Go"    : "go run .",
+    "Python": "pypy ${file}",
+    "Shell" : "bash ${file}"
   },
   "errorLens.followCursor": "allLines",
   "errorLens.fontFamily": "Cascadia Code, monospace",
@@ -144,7 +161,9 @@
   "todohighlight.isEnable": true,
   "todohighlight.isCaseSensitive": false,
   "todohighlight.maxFilesForSearch": 5120,
-  "todohighlight.include": ["**/*.*"],
+  "todohighlight.include": [
+    "**/*.*"
+  ],
   "todohighlight.keywords": [
     {
       "text"           : "TODO:",
