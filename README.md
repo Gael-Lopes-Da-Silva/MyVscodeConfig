@@ -9,9 +9,9 @@
 ---
 
 ### 🖼️ Screenshots
-![](screenshots/s1.png)
-![](screenshots/s2.png)
-![](screenshots/s3.png)
+![](https://cdn.discordapp.com/attachments/594977170850447411/980089463218778112/screenshot1.png)
+![](https://cdn.discordapp.com/attachments/594977170850447411/980089463499784192/screenshot2.png)
+![](https://cdn.discordapp.com/attachments/594977170850447411/980089462954541098/screenshot3.png)
 
 ### 📃 Font
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
