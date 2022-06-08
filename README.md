@@ -29,6 +29,7 @@
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [Licence Snippets](https://marketplace.visualstudio.com/items?itemName=benemohamed.licence-snippets)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
@@ -56,22 +57,24 @@
     "editor.detectIndentation": false,
     "editor.dragAndDrop": false,
     "editor.emptySelectionClipboard": true,
+    "editor.fastScrollSensitivity": 5,
+    "editor.find.seedSearchStringFromSelection": "selection",
     "editor.folding": true,
     "editor.foldingHighlight": false,
     "editor.foldingStrategy": "auto",
-    "editor.fastScrollSensitivity": 5,
-    "editor.fontSize": 18,
     "editor.fontFamily": "Cascadia Code, monospace",
+    "editor.fontLigatures": false,
+    "editor.fontSize": 18,
     "editor.guides.indentation": true,
     "editor.guides.bracketPairs": false,
-    "editor.hideCursorInOverviewRuler": true,
+    "editor.hideCursorInOverviewRuler": false,
     "editor.insertSpaces": true,
     "editor.linkedEditing": false,
     "editor.largeFileOptimizations": true,
     "editor.lightbulb.enabled": false,
     "editor.links": true,
     "editor.letterSpacing": 0.2,
-    "editor.lineHeight": 21,
+    "editor.lineHeight": 24,
     "editor.lineNumbers": "relative",
     "editor.matchBrackets": "always",
     "editor.minimap.enabled": false,
@@ -81,10 +84,11 @@
     "editor.quickSuggestionsDelay": 0,
     "editor.renderWhitespace": "selection",
     "editor.renderLineHighlight": "all",
-    "editor.suggestFontSize": 17,
-    "editor.suggestLineHeight": 22,
+    "editor.suggestFontSize": 18,
+    "editor.suggestLineHeight": 24,
     "editor.suggestSelection": "first",
     "editor.suggest.preview": true,
+    "editor.suggest.insertMode": "replace",
     "editor.tabSize": 4,
     "editor.unicodeHighlight.invisibleCharacters": false,
     "editor.wordWrap": "bounded",
@@ -107,24 +111,7 @@
     "security.workspace.trust.enabled": false,
     "terminal.integrated.customGlyphs": true,
     "terminal.integrated.enableFileLinks": true,
-    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, monospace",
     "terminal.integrated.gpuAcceleration": "on",
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell",
-            "args": [
-                "-nologo"
-            ]
-        }
-    },
-    "terminal.integrated.shellIntegration.enabled": true,
-    "terminal.integrated.shellIntegration.decorationIcon": "circle-outline",
-    "terminal.integrated.shellIntegration.decorationIconError": "error-small",
-    "terminal.integrated.shellIntegration.decorationIconSuccess": "primitive-dot",
-    "terminal.integrated.shellIntegration.decorationsEnabled": true,
-    "terminal.integrated.shellIntegration.showWelcome": false,
     "terminal.integrated.showLinkHover": true,
     "window.dialogStyle": "custom",
     "window.menuBarVisibility": "hidden",
@@ -140,15 +127,17 @@
     // extensions
     "csharp.referencesCodeLens.enabled": false,
     "csharp.suppressBuildAssetsNotification": true,
-    "gopls": {"build.experimentalWorkspaceModule": true},
-    "go.toolsManagement.autoUpdate": true,
+    "omnisharp.enableImportCompletion": true,
+    "omnisharp.organizeImportsOnFormat": true,
+    "omnisharp.useModernNet": false,
     "conventionalCommits.showNewVersionNotes": false,
     "conventionalCommits.lineBreak": "\\n",
+    "conventionalCommits.promptBody": true,
+    "conventionalCommits.promptFooter": false,
     "command-runner.terminal.autoFocus": true,
-    "command-runner.terminal.autoClear": false,
+    "command-runner.terminal.autoClear": false, 
     "command-runner.terminal.cwd": "${fileDirname}",
     "command-runner.terminal.name": "script",
-    "command-runner.terminal.shellArgs": "-nologo",
     "command-runner.commands": {
         // not simple
         "C"   : "clang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
@@ -164,10 +153,13 @@
         "Python"   : "pypy ${file}",
         "Shell"    : "sh ${file}"
     },
+    "markdown.extension.list.indentationSize": "inherit",
+    "markdown.extension.syntax.decorations": true,
     "hexeditor.columnWidth": 16,
     "hexeditor.showDecodedText": true,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
+    "errorLens.enabled": true,
     "errorLens.followCursor": "allLines",
     "errorLens.fontFamily": "Cascadia Code, monospace",
     "errorLens.gutterIconsEnabled": true,
@@ -177,7 +169,6 @@
     "errorLens.scrollbarHackEnabled": true,
     "todohighlight.isEnable": true,
     "todohighlight.isCaseSensitive": false,
-    "todohighlight.maxFilesForSearch": 5120,
     "todohighlight.include": ["**/*.*"],
     "todohighlight.keywords": [
         {
@@ -229,64 +220,75 @@
 ### ⌨️ Keybindings
 ~~~json with comments
 [
-  // vscode
-  {
-    "key": "alt+oem_plus",
-    "command": "editor.action.fontZoomIn"
-  },
-  {
-    "key": "alt+oem_minus",
-    "command": "editor.action.fontZoomOut"
-  },
-  {
-    "key": "shift+alt+backspace",
-    "command": "editor.action.fontZoomReset"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "command": "workbench.action.editor.changeLanguageMode",
-    "when": "!notebookEditorFocused"
-  },
-  
-  // todo highlight
-  {
-    "key": "ctrl+x t",
-    "command": "emacs-mcx.executeCommandWithPrefixArgument",
-    "args": {
-      "command": "todohighlight.listAnnotations"
-    }
-  },
+    // vscode
+    {
+        "key": "alt+=",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "alt+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "shift+alt+backspace",
+        "command": "editor.action.fontZoomReset"
+    },
 
-  // command runner
-  {
-    "key": "ctrl+x c",
-    "command": "emacs-mcx.executeCommandWithPrefixArgument",
-    "args": {
-      "command": "command-runner.run"
-    }
-  },
+    // todo highlight
+    {
+        "key": "ctrl+x t",
+        "command": "todohighlight.listAnnotations"
+    },
 
-  // error lens
-  {
-    "key": "ctrl+x e",
-    "command": "emacs-mcx.executeCommandWithPrefixArgument",
-    "args": {
-      "command": "errorLens.toggle"
-    }
-  },
+    // command runner
+    {
+        "key": "ctrl+x c",
+        "command": "command-runner.run"
+    },
 
-  // emacs
-  {
-    "key": "shift+space",
-    "command": "editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+x ctrl+j",
-    "command": "emacs-mcx.executeCommandWithPrefixArgument",
-    "args": {
-      "command": "workbench.action.terminal.killAll"
+    // error lens
+    {
+        "key": "ctrl+x e",
+        "command": "errorLens.toggle"
+    },
+
+    // emacs
+    {
+        "key": "shift+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+x ctrl+j",
+        "command": "workbench.action.terminal.killAll"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+x /",
+        "command": "redo"
+    },
+    {
+        "key": "ctrl+x f",
+        "command": "workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+x l",
+        "command": "workbench.action.editor.changeLanguageMode",
+        "when": "!notebookEditorFocused && editorTextFocus"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "emacs-mcx.backwardParagraph",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "emacs-mcx.forwardParagraph",
+        "when": "editorTextFocus && !suggestWidgetVisible"
     }
-  }
 ]
 ~~~
