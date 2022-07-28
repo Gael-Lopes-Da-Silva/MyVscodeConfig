@@ -14,7 +14,7 @@
 ![](https://cdn.discordapp.com/attachments/594977170850447411/980089462954541098/screenshot3.png)
 
 ### 📃 Font
-- [Cascadia Code](https://github.com/microsoft/cascadia-code)
+- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)
 
 ### 🏞️ Theme
 - [Yellowed](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
@@ -22,12 +22,11 @@
 ### ⚙️ Extensions
 - [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)
+- [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
-- [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-- [Licence Snippets](https://marketplace.visualstudio.com/items?itemName=benemohamed.licence-snippets)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
@@ -40,6 +39,9 @@
 ~~~json with comments
 {
     // options
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.icons": true,
     "debug.openDebug": "neverOpen",
     "debug.terminal.clearBeforeReusing": true,
     "diffEditor.codeLens": true,
@@ -51,7 +53,6 @@
     "editor.codeLens": true,
     "editor.colorDecorators": true,
     "editor.cursorWidth": 3,
-    "editor.codeLensFontFamily": "Cascadia Code, monospace",
     "editor.cursorStyle": "block",
     "editor.cursorBlinking": "solid",
     "editor.detectIndentation": false,
@@ -62,18 +63,19 @@
     "editor.folding": true,
     "editor.foldingHighlight": false,
     "editor.foldingStrategy": "auto",
-    "editor.fontFamily": "Cascadia Code, monospace",
+    "editor.fontFamily": "JetBrains Mono, monospace",
     "editor.fontLigatures": false,
     "editor.fontSize": 18,
+    "editor.fontWeight": "600",
     "editor.guides.indentation": true,
     "editor.guides.bracketPairs": false,
     "editor.hideCursorInOverviewRuler": false,
     "editor.insertSpaces": true,
     "editor.linkedEditing": false,
     "editor.largeFileOptimizations": true,
+    "editor.letterSpacing": -0.3,
     "editor.lightbulb.enabled": false,
     "editor.links": true,
-    "editor.letterSpacing": 0.2,
     "editor.lineHeight": 24,
     "editor.lineNumbers": "relative",
     "editor.matchBrackets": "always",
@@ -95,8 +97,11 @@
     "editor.wordWrapColumn": 150,
     "editor.wrappingIndent": "same",
     "editor.wrappingStrategy": "simple",
-    "explorer.compactFolders": false,
+    "explorer.compactFolders": true,
     "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.excludeGitIgnore": true,
+    "explorer.incrementalNaming": "smart",
     "extensions.ignoreRecommendations": true,
     "files.autoSave": "afterDelay",
     "files.defaultLanguage": "${activeEditorLanguage}",
@@ -105,6 +110,8 @@
     "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.restoreUndoStack": true,
+    "files.saveConflictResolution": "overwriteFileOnDisk",
+    "files.simpleDialog.enable": true,
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
@@ -117,6 +124,9 @@
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "custom",
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${appName}",
+    "window.confirmBeforeClose": "keyboardOnly",
+    "window.enableMenuBarMnemonics": false,
+    "window.experimental.windowControlsOverlay.enabled": true,
     "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
     "workbench.editor.enablePreview": false,
@@ -125,23 +135,30 @@
     "workbench.colorTheme": "Yellowed",
 
     // extensions
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.debugShortcut": false,
+    "material-icon-theme.hidesExplorerArrows": true,
+    "redhat.telemetry.enabled": false,
+    "license.author": "Your name",
+    "license.extension": "",
+    "license.year": "auto",
+    "license.default": "MIT",
     "csharp.referencesCodeLens.enabled": false,
     "csharp.suppressBuildAssetsNotification": true,
     "omnisharp.enableImportCompletion": true,
     "omnisharp.organizeImportsOnFormat": true,
     "omnisharp.useModernNet": false,
     "conventionalCommits.showNewVersionNotes": false,
-    "conventionalCommits.lineBreak": "\\n",
-    "conventionalCommits.promptBody": true,
-    "conventionalCommits.promptFooter": false,
+    "conventionalCommits.showEditor": true,
+    "conventionalCommits.editor.keepAfterSave": true,
     "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.autoClear": false, 
     "command-runner.terminal.cwd": "${fileDirname}",
     "command-runner.terminal.name": "script",
     "command-runner.commands": {
         // not simple
-        "C"   : "clang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
-        "C++" : "clang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension} ; if ($?) {./${fileBasenameNoExtension}}",
+        "C"   : "clang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
+        "C++" : "clang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
         "Java": "javac ${file} ; if ($?) {java ${fileBasenameNoExtension}}",
 
         // simple
@@ -150,8 +167,10 @@
         "C#"       : "dotnet run",
         "C# Script": "dotnet script ${file}",
         "Go"       : "go run .",
-        "Python"   : "pypy ${file}",
-        "Shell"    : "sh ${file}"
+        "Python"   : "python ${file}",
+        "Batch"    : "powershell ${file}",
+        "Shell"    : "sh ${file}",
+        "Make"     : "make ${file}"
     },
     "markdown.extension.list.indentationSize": "inherit",
     "markdown.extension.syntax.decorations": true,
@@ -161,57 +180,72 @@
     "hexeditor.inspectorType": "aside",
     "errorLens.enabled": true,
     "errorLens.followCursor": "allLines",
-    "errorLens.fontFamily": "Cascadia Code, monospace",
     "errorLens.gutterIconsEnabled": true,
     "errorLens.messageBackgroundMode": "none",
     "errorLens.messageTemplate": "$severity: $message",
     "errorLens.removeLinebreaks": false,
     "errorLens.scrollbarHackEnabled": true,
     "todohighlight.isEnable": true,
-    "todohighlight.isCaseSensitive": false,
+    "todohighlight.isCaseSensitive": true,
     "todohighlight.include": ["**/*.*"],
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.vscode-test/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**"
+    ],
     "todohighlight.keywords": [
         {
-            "text"           : "TODO:",
-            "color"          : "#ecf0f1",
-            "border"         : "1px solid #e74c3c",
-            "borderRadius"   : "4px",
-            "backgroundColor": "#e74c3c"
+            "text"           : "TODO",
+            "color"          : "#f1c40f",
+            "fontWeight"     : "bold",
+            "backgroundColor": "#00000000",
+            "regex": {
+                "pattern": "(?<=^|\"|\\s)TODO(?!\\w)"
+            }
         },
         {
-            "text"           : "FIXME:",
-            "color"          : "#ecf0f1",
-            "border"         : "1px solid #f1c40f",
-            "borderRadius"   : "4px",
-            "backgroundColor": "#f1c40f"
+            "text"           : "FIXME",
+            "color"          : "#e74c3c",
+            "fontWeight"     : "bold",
+            "backgroundColor": "#00000000",
+            "regex": {
+                "pattern": "(?<=^|\"|\\s)FIXME(?!\\w)"
+            }
         },
         {
-            "text"           : "NOTE:",
-            "color"          : "#ecf0f1",
-            "border"         : "1px solid #3498db",
-            "borderRadius"   : "4px",
-            "backgroundColor": "#3498db"
+            "text"           : "NOTE",
+            "color"          : "#3498db",
+            "fontWeight"     : "bold",
+            "backgroundColor": "#00000000",
+            "regex": {
+                "pattern": "(?<=^|\"|\\s)NOTE(?!\\w)"
+            }
         },
         {
-            "text"           : "HACK:",
-            "color"          : "#ecf0f1",
-            "border"         : "1px solid #9b59b6",
-            "borderRadius"   : "4px",
-            "backgroundColor": "#9b59b6"
+            "text"           : "HACK",
+            "color"          : "#9b59b6",
+            "fontWeight"     : "bold",
+            "backgroundColor": "#00000000",
+            "regex": {
+                "pattern": "(?<=^|\"|\\s)HACK(?!\\w)"
+            }
         },
         {
-            "text"           : "BUG:",
-            "color"          : "#ecf0f1",
-            "border"         : "1px solid #2ecc71",
-            "borderRadius"   : "4px",
-            "backgroundColor": "#2ecc71"
-        },
-        {
-            "text"           : "XXX:",
-            "color"          : "#ecf0f1",
-            "border"         : "1px solid #3c3d4d",
-            "borderRadius"   : "4px",
-            "backgroundColor": "#3c3d4d"
+            "text"           : "BUG",
+            "color"          : "#2ecc71",
+            "fontWeight"     : "bold",
+            "backgroundColor": "#00000000",
+            "regex": {
+                "pattern": "(?<=^|\"|\\s)BUG(?!\\w)"
+            }
         }
     ]
 }
@@ -260,7 +294,12 @@
     },
     {
         "key": "ctrl+x ctrl+j",
-        "command": "workbench.action.terminal.killAll"
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "ctrl+x j",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
     },
     {
         "key": "ctrl+y",
