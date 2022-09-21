@@ -53,7 +53,7 @@
     "editor.codeLens": true,
     "editor.colorDecorators": true,
     "editor.cursorWidth": 3,
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
     "editor.cursorBlinking": "solid",
     "editor.detectIndentation": false,
     "editor.dragAndDrop": false,
@@ -63,7 +63,7 @@
     "editor.folding": true,
     "editor.foldingHighlight": false,
     "editor.foldingStrategy": "auto",
-    "editor.fontFamily": "JetBrains Mono, monospace",
+    "editor.fontFamily": "Cascadia Mono, monospace",
     "editor.fontLigatures": false,
     "editor.fontSize": 18,
     "editor.fontWeight": "600",
@@ -88,8 +88,6 @@
     "editor.renderLineHighlight": "all",
     "editor.suggestFontSize": 18,
     "editor.suggestLineHeight": 24,
-    "editor.suggestSelection": "first",
-    "editor.suggest.preview": true,
     "editor.suggest.insertMode": "replace",
     "editor.tabSize": 4,
     "editor.unicodeHighlight.invisibleCharacters": false,
@@ -130,25 +128,25 @@
     "window.experimental.windowControlsOverlay.enabled": true,
     "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Yellowed",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "material-product-icons",
-    "workbench.colorTheme": "Yellowed",
 
     // extensions
+    "liveServer.settings.donotShowInfoMsg": true,
+    "C_Cpp.autocomplete": "Default",
     "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.debugShortcut": false,
+    "C_Cpp.autoAddFileAssociations": true,
     "material-icon-theme.hidesExplorerArrows": true,
-    "redhat.telemetry.enabled": false,
-    "license.author": "Gael Lopes Da Silva",
-    "license.extension": "",
+    "license.author": "Your name",
+    "license.extension": ".md",
     "license.year": "auto",
     "license.default": "MIT",
-    "csharp.referencesCodeLens.enabled": false,
     "csharp.suppressBuildAssetsNotification": true,
     "omnisharp.enableImportCompletion": true,
     "omnisharp.organizeImportsOnFormat": true,
-    "omnisharp.useModernNet": false,
     "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.autoClear": false, 
     "command-runner.terminal.cwd": "${fileDirname}",
@@ -160,15 +158,16 @@
         "Java": "javac ${file} ; if ($?) {java ${fileBasenameNoExtension}}",
 
         // simple
-        "Nim"      : "nim c -r --hints:off --spellSuggest:0 ${file}",
-        "Nims"     : "nim -r --hints:off --spellSuggest:0 ${file}",
-        "C#"       : "dotnet run",
-        "C# Script": "dotnet script ${file}",
-        "Go"       : "go run .",
-        "Python"   : "python ${file}",
-        "Batch"    : "powershell ${file}",
-        "Shell"    : "sh ${file}",
-        "Make"     : "make ${file}"
+        "Nim"        : "nim c -r --hints:off --spellSuggest:0 ${file}",
+        "Nims"       : "nim -r --hints:off --spellSuggest:0 ${file}",
+        "C#"         : "dotnet run",
+        "C# Script"  : "dotnet script ${file}",
+        "Go"         : "go run .",
+        "Python"     : "python ${file}",
+        "Batch"      : "powershell ${file}",
+        "Shell"      : "sh ${file}",
+        "Make"       : "make ${file}",
+        "Typescript" : "deno run ${file}"
     },
     "markdown.extension.list.indentationSize": "inherit",
     "markdown.extension.syntax.decorations": true,
@@ -206,7 +205,7 @@
             "fontWeight"     : "bold",
             "backgroundColor": "#00000000",
             "regex": {
-                "pattern": "(?<=^|\"|\\s)TODO(?!\\w)"
+                "pattern": "(?<=^|\"|:|\\s)TODO(?!\\w)"
             }
         },
         {
@@ -215,7 +214,7 @@
             "fontWeight"     : "bold",
             "backgroundColor": "#00000000",
             "regex": {
-                "pattern": "(?<=^|\"|\\s)FIXME(?!\\w)"
+                "pattern": "(?<=^|\"|:|\\s)FIXME(?!\\w)"
             }
         },
         {
@@ -224,7 +223,7 @@
             "fontWeight"     : "bold",
             "backgroundColor": "#00000000",
             "regex": {
-                "pattern": "(?<=^|\"|\\s)NOTE(?!\\w)"
+                "pattern": "(?<=^|\"|:|\\s)NOTE(?!\\w)"
             }
         },
         {
@@ -233,7 +232,7 @@
             "fontWeight"     : "bold",
             "backgroundColor": "#00000000",
             "regex": {
-                "pattern": "(?<=^|\"|\\s)HACK(?!\\w)"
+                "pattern": "(?<=^|\"|:|\\s)HACK(?!\\w)"
             }
         },
         {
@@ -242,7 +241,7 @@
             "fontWeight"     : "bold",
             "backgroundColor": "#00000000",
             "regex": {
-                "pattern": "(?<=^|\"|\\s)BUG(?!\\w)"
+                "pattern": "(?<=^|\"|:|\\s)BUG(?!\\w)"
             }
         }
     ]
