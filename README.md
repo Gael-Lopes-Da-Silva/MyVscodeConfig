@@ -17,16 +17,19 @@
 - [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)
 
 ### 🏞️ Theme
-- [Yellowed](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
+- [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
+- [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
 ### ⚙️ Extensions
 - [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)
 - [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
+- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
@@ -98,7 +101,7 @@
     "explorer.compactFolders": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "explorer.excludeGitIgnore": true,
+    "explorer.excludeGitIgnore": false,
     "explorer.incrementalNaming": "smart",
     "extensions.ignoreRecommendations": true,
     "files.autoSave": "afterDelay",
@@ -128,8 +131,8 @@
     "window.experimental.windowControlsOverlay.enabled": true,
     "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Yellowed",
     "workbench.editor.enablePreview": false,
+    "workbench.colorTheme": "Yellowed",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "material-product-icons",
 
@@ -139,35 +142,53 @@
     "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.debugShortcut": false,
     "C_Cpp.autoAddFileAssociations": true,
+    "C_Cpp.default.compilerPath": "C:\\Users\\Oasis\\Applications\\Clang\\bin\\gcc.exe",
     "material-icon-theme.hidesExplorerArrows": true,
-    "license.author": "Your name",
+    "license.author": "your name",
     "license.extension": ".md",
     "license.year": "auto",
     "license.default": "MIT",
     "csharp.suppressBuildAssetsNotification": true,
     "omnisharp.enableImportCompletion": true,
     "omnisharp.organizeImportsOnFormat": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.enableAppInsights": false,
+    "code-runner.ignoreSelection": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.showRunCommandInEditorContextMenu": false,
+    "code-runner.showRunCommandInExplorerContextMenu": false,
+    "code-runner.showRunIconInEditorTitleMenu": false,
+    "code-runner.showStopIconInEditorTitleMenu": false,
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.executorMapByGlob": {
+        "*.c"     : "cc $fullFileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+        "*.cs"    : "dotnet run $dir",
+        "*.go"    : "go run .",
+        "*.py"    : "python $fullFileName",
+        "*.nim"   : "nim compile --run --hints:off --spellSuggest:0 $fullFileName",
+        "*.nims"  : "nim --run --hints:off --spellSuggest:0 $fullFileName",
+        "*.java"  : "javac $fullFileName && java $fileNameWithoutExt",
+        "*.sh"    : "sh $fullFileName",
+        "makefile": "make $fullFileName"
+    },
     "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.autoClear": false, 
     "command-runner.terminal.cwd": "${fileDirname}",
     "command-runner.terminal.name": "script",
     "command-runner.commands": {
-        // not simple
-        "C"   : "clang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
-        "C++" : "clang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
-        "Java": "javac ${file} ; if ($?) {java ${fileBasenameNoExtension}}",
-
-        // simple
-        "Nim"        : "nim c -r --hints:off --spellSuggest:0 ${file}",
-        "Nims"       : "nim -r --hints:off --spellSuggest:0 ${file}",
-        "C#"         : "dotnet run",
-        "C# Script"  : "dotnet script ${file}",
-        "Go"         : "go run .",
-        "Python"     : "python ${file}",
-        "Batch"      : "powershell ${file}",
-        "Shell"      : "sh ${file}",
-        "Make"       : "make ${file}",
-        "Typescript" : "deno run ${file}"
+        "C"         : "clang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
+        "C++"       : "clang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
+        "Java"      : "javac ${file} ; if ($?) {java ${fileBasenameNoExtension}}",
+        "Nim"       : "nim c -r --hints:off --spellSuggest:0 ${file}",
+        "Nims"      : "nim -r --hints:off --spellSuggest:0 ${file}",
+        "C#"        : "dotnet run",
+        "Go"        : "go run .",
+        "Python"    : "python ${file}",
+        "Batch"     : "powershell ${file}",
+        "Shell"     : "sh ${file}",
+        "Make"      : "make ${file}",
+        "Typescript": "deno run ${file}"
     },
     "markdown.extension.list.indentationSize": "inherit",
     "markdown.extension.syntax.decorations": true,
@@ -269,6 +290,16 @@
     {
         "key": "ctrl+x t",
         "command": "todohighlight.listAnnotations"
+    },
+
+    // code runner
+    {
+        "key": "f5",
+        "command": "code-runner.run"
+    },
+    {
+        "key": "alt+f5",
+        "command": "code-runner.stop"
     },
 
     // command runner
