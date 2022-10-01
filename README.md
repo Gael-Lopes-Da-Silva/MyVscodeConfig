@@ -356,6 +356,11 @@
         "key": "ctrl+down",
         "command": "emacs-mcx.forwardParagraph",
         "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+x r",
+        "command": "workbench.action.closeFolder",
+        "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
     }
 ]
 ~~~
