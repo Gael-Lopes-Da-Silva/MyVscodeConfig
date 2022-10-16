@@ -14,7 +14,7 @@
 ![](https://cdn.discordapp.com/attachments/594977170850447411/1002193479138545734/Capture_decran_2022-07-28_143710.png)
 
 ### 📃 Font
-- [Cascadia Mono](https://github.com/JetBrains/JetBrainsMono)
+- [Cascadia Mono](https://github.com/microsoft/cascadia-code)
 
 ### 🏞️ Theme
 - [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
@@ -67,14 +67,14 @@
         "O": ["editor.action.insertLineBefore", "vimspired.toggle"],
 
         "m": { // move
-            "j": {"command": "cursorMove", "args": {"to": "prevBlankLine"}},    // blank up
-            "k": {"command": "cursorMove", "args": {"to": "nextBlankLine"}},    // blank down
-            "c": {"command": "cursorMove", "args": {"to": "viewPortCenter"}},   // viewport center
-            ">": {"command": "cursorMove", "args": {"to": "viewPortTop"}},      // viewport top
-            "<": {"command": "cursorMove", "args": {"to": "viewPortBottom"}},   // viewport bottom
+            "j": {"command": "cursorMove", "args": {"to": "prevBlankLine"}},
+            "k": {"command": "cursorMove", "args": {"to": "nextBlankLine"}},
+            "c": {"command": "cursorMove", "args": {"to": "viewPortCenter"}},
+            ">": {"command": "cursorMove", "args": {"to": "viewPortTop"}}, 
+            "<": {"command": "cursorMove", "args": {"to": "viewPortBottom"}},
         },
         
-        "v": {
+        "v": { // viewport
             ".": {"command": "editorScroll", "args": {"to": "up", "by": "halfPage"}},
             ",": {"command": "editorScroll", "args": {"to": "down", "by": "halfPage"}},
             "<": {"command": "editorScroll", "args": {"to": "down", "by": "page"}},
@@ -113,6 +113,7 @@
             },
             "f": { // file
                 "o": "workbench.action.files.openFile",              // open
+                "c": "workbench.action.closeActiveEditor",              // close
                 "s": "workbench.action.files.save",                  // save
                 "S": "workbench.action.files.saveFiles",             // save all
                 "g": "workbench.action.gotoLine",                    // go to
@@ -190,26 +191,13 @@
         "*.nims"  : "nim --run --hints:off --spellSuggest:0 $fullFileName",
         "*.java"  : "javac $fullFileName && java $fileNameWithoutExt",
         "*.sh"    : "sh $fullFileName",
+        "*.ts"    : "deno run $fullFileName",
         "makefile": "make $fullFileName"
     },
     "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.autoClear": false, 
     "command-runner.terminal.cwd": "${fileDirname}",
     "command-runner.terminal.name": "script",
-    "command-runner.commands": {
-        "C"         : "clang -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
-        "C++"       : "clang++ -Wall -Wextra -pedantic -fno-common -fno-builtin ${file} -o ${fileBasenameNoExtension}.exe ; if ($?) {./${fileBasenameNoExtension}}",
-        "Java"      : "javac ${file} ; if ($?) {java ${fileBasenameNoExtension}}",
-        "Nim"       : "nim c -r --hints:off --spellSuggest:0 ${file}",
-        "Nims"      : "nim -r --hints:off --spellSuggest:0 ${file}",
-        "C#"        : "dotnet run",
-        "Go"        : "go run .",
-        "Python"    : "python ${file}",
-        "Batch"     : "powershell ${file}",
-        "Shell"     : "sh ${file}",
-        "Make"      : "make ${file}",
-        "Typescript": "deno run ${file}"
-    },
     "markdown.extension.list.indentationSize": "inherit",
     "markdown.extension.syntax.decorations": true,
     "hexeditor.columnWidth": 16,
