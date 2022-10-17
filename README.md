@@ -33,6 +33,7 @@
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
+- [NERDTree](https://marketplace.visualstudio.com/items?itemName=Llam4u.nerdtree)
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
@@ -45,10 +46,15 @@
     "vimspired.keybindings": {
         "i": "vimspired.toggle",
 
-        "j": {"selecting": "cursorUpSelect", "default": "cursorUp"},
-        "k": {"selecting": "cursorDownSelect", "default": "cursorDown"},
-        "h": {"selecting": "cursorLeftSelect", "default": "cursorLeft"},
-        "l": {"selecting": "cursorRightSelect", "default": "cursorRight"},
+        "k": "cursorUp",
+        "j": "cursorDown",
+        "h": "cursorLeft",
+        "l": "cursorRight",
+        "K": "cursorUpSelect",
+        "J": "cursorDownSelect",
+        "H": "cursorLeftSelect",
+        "L": "cursorRightSelect",
+
         ">": {"selecting": "cursorTopSelect", "default": "cursorTop"},
         "<": {"selecting": "cursorBottomSelect", "default": "cursorBottom"},
         ".": {"selecting": "cursorEndSelect", "default": "cursorEnd"},
@@ -56,15 +62,22 @@
 
         "/": "actions.find",
         ";": "editor.action.triggerSuggest",
-        "c": "editor.action.clipboardCopyAction",
+        "c": ["editor.action.clipboardCopyAction", "vimspired.cancelSelection"],
         "p": "editor.action.clipboardPasteAction",
         "u": "undo",
         "r": "redo",
         "[": "editor.fold",
         "]": "editor.unfold",
 
-        "o": ["editor.action.insertLineAfter", "vimspired.toggle"],
-        "O": ["editor.action.insertLineBefore", "vimspired.toggle"],
+        "o": ["editor.action.insertLineAfter", "vimspired.enterInsert"],
+        "O": ["editor.action.insertLineBefore", "vimspired.enterInsert"],
+
+        "v": { // viewport
+            ".": {"command": "editorScroll", "args": {"to": "up", "by": "halfPage"}},
+            ",": {"command": "editorScroll", "args": {"to": "down", "by": "halfPage"}},
+            "<": {"command": "editorScroll", "args": {"to": "down", "by": "page"}},
+            ">": {"command": "editorScroll", "args": {"to": "up", "by": "page"}},
+        },
 
         "m": { // move
             "j": {"command": "cursorMove", "args": {"to": "prevBlankLine"}},
@@ -73,20 +86,35 @@
             ">": {"command": "cursorMove", "args": {"to": "viewPortTop"}}, 
             "<": {"command": "cursorMove", "args": {"to": "viewPortBottom"}},
         },
-        
-        "v": { // viewport
-            ".": {"command": "editorScroll", "args": {"to": "up", "by": "halfPage"}},
-            ",": {"command": "editorScroll", "args": {"to": "down", "by": "halfPage"}},
-            "<": {"command": "editorScroll", "args": {"to": "down", "by": "page"}},
-            ">": {"command": "editorScroll", "args": {"to": "up", "by": "page"}},
+
+        "w": { // word
+            "d": "editor.action.goToDeclaration",          // declaration
+            "r": "editor.action.rename",                   // rename
+            "R": "editor.action.startFindReplaceAction",   // replace
+            "f": "references-view.find",                   // reference
+            "l": "editor.action.openLink",                 // link
+            "a": "wwm.aligncode",                          // align
+            "c": "editor.action.clipboardCutAction",       // cut
+            "h": "editor.action.showHover",                // hover
+            "p": "editor.action.triggerParameterHints",    // parameters
+            "s": "editor.action.sortLinesAscending",       // sort
         },
 
         "s": { // select
             "a": "editor.action.selectAll",          // all
             "b": "editor.action.selectToBracket",    // brackets
             "o": "editor.action.selectHighlights",   // occurence
-            "s": "vimspired.toggleSelection",        // select
             "c": "vimspired.cancelSelection",        // cancel
+        },
+
+        "S": { // sidebar
+            "e": "workbench.view.explorer",                    // explorer
+            "g": "workbench.view.scm",                         // git
+            "d": "workbench.view.debug",                       // debuger
+            "x": "workbench.view.extensions",                  // extensions
+            "s": "workbench.action.findInFiles",               // search
+            "r": "workbench.action.replaceInFiles",            // replace
+            " ": "workbench.action.toggleSidebarVisibility",   // toggle
         },
 
         "a": { // anchor
@@ -113,14 +141,13 @@
             },
             "f": { // file
                 "o": "workbench.action.files.openFile",              // open
-                "c": "workbench.action.closeActiveEditor",              // close
+                "c": "workbench.action.closeActiveEditor",           // close
                 "s": "workbench.action.files.save",                  // save
                 "S": "workbench.action.files.saveFiles",             // save all
                 "g": "workbench.action.gotoLine",                    // go to
                 "l": "workbench.action.editor.changeLanguageMode",   // language
                 "f": "editor.action.formatDocument",                 // format
                 "r": "editor.action.rename",                         // rename
-                "a": "wwm.aligncode",                                // align
                 "p": "copyFilePath",                                 // path
                 "P": "copyRelativeFilePath",                         // relative path
                 "n": "explorer.newFile",                             // new
@@ -130,26 +157,19 @@
                 "p": "workbench.action.showCommands",   // palette
                 "d": "workbench.action.debug.start",    // debug
             },
-            "s": { // sidebar
-                "e": "workbench.view.explorer",                    // explorer
-                "s": "workbench.action.findInFiles",               // search
-                "g": "workbench.view.scm",                         // git
-                "d": "workbench.view.debug",                       // debuger
-                "x": "workbench.view.extensions",                  // extensions
-                " ": "workbench.action.toggleSidebarVisibility",   // toggle
-            },
             "g": { // git
                 "c": "git.commit",   // commit
                 "p": "git.push",     // push
                 "P": "git.pull",     // pull
                 "C": "git.clone",    // clone
-                "i": "git.init",     // initialize repo
+                "i": "git.init",     // init
             },
             "o": { // options
                 "s": "workbench.action.openSettingsJson",            // settings
                 "k": "workbench.action.openGlobalKeybindingsFile",   // keysettings
                 "r": "workbench.action.reloadWindow",                // reload
                 "S": "workbench.action.openGlobalKeybindings",       // shortcuts
+                "w": "editor.action.toggleRenderWhitespace",         // whitespace
             }
         }
     },
@@ -321,7 +341,7 @@
     "editor.padding.bottom": 1,
     "editor.padding.top": 1,
     "editor.quickSuggestionsDelay": 0,
-    "editor.renderWhitespace": "selection",
+    "editor.renderWhitespace": "none",
     "editor.renderLineHighlight": "all",
     "editor.suggestFontSize": 18,
     "editor.suggestLineHeight": 24,
@@ -424,7 +444,17 @@
     {
         "key": "escape",
         "command": "removeSecondaryCursors",
-        "when": "editorHasMultipleSelections && editorTextFocus && !editorReadonly"
+        "when": "editorHasMultipleSelections && textInputFocus"
+    },
+    {
+        "key": "escape",
+        "command": "leaveSnippet",
+        "when": "editorTextFocus && inSnippetMode"
+    },
+    {
+        "key": "escape",
+        "command": "closeParameterHints",
+        "when": "editorFocus && parameterHintsVisible"
     },
     {
         "key": "ctrl+up",
@@ -440,5 +470,61 @@
             "to": "nextBlankLine"
         }
     },
+    {
+        "key": "ctrl+j",
+        "command": "cursorMove",
+        "when": "vimspired.normal",
+        "args": {
+            "to": "nextBlankLine"
+        }
+    },
+    {
+        "key": "ctrl+k",
+        "command": "cursorMove",
+        "when": "vimspired.normal",
+        "args": {
+            "to": "prevBlankLine"
+        }
+    },
+    {
+        "key": "ctrl+h",
+        "command": "cursorWordLeft",
+        "when": "vimspired.normal"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "cursorWordRight",
+        "when": "vimspired.normal"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "editor.action.insertCursorBelow",
+        "when": "vimspired.normal"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "editor.action.insertCursorAbove",
+        "when": "vimspired.normal"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "vimspired.normal"
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "vimspired.normal"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "cursorWordLeftSelect",
+        "when": "vimspired.normal"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "cursorWordEndRightSelect",
+        "when": "vimspired.normal"
+    }
 ]
 ~~~
