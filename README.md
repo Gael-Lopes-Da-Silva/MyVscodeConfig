@@ -54,12 +54,13 @@
         "J": "cursorDownSelect",
         "H": "cursorLeftSelect",
         "L": "cursorRightSelect",
-
-        ">": {"selecting": "cursorTopSelect", "default": "cursorTop"},
-        "<": {"selecting": "cursorBottomSelect", "default": "cursorBottom"},
-        ".": {"selecting": "cursorEndSelect", "default": "cursorEnd"},
-        ",": {"selecting": "cursorHomeSelect", "default": "cursorHome"},
-
+        
+        
+        ">": "cursorTop",
+        "<": "cursorBottom",
+        ".": "cursorEnd",
+        ",": "cursorHome",
+        
         "/": "actions.find",
         ";": "editor.action.triggerSuggest",
         "c": ["editor.action.clipboardCopyAction", "vimspired.cancelSelection"],
@@ -72,11 +73,23 @@
         "o": ["editor.action.insertLineAfter", "vimspired.enterInsert"],
         "O": ["editor.action.insertLineBefore", "vimspired.enterInsert"],
 
+        "e": { // editor
+            "l": "workbench.action.moveEditorRightInGroup",   // right
+            "h": "workbench.action.moveEditorLeftInGroup",    // left
+            "p": "workbench.action.pinEditor",                // pin
+            "u": "workbench.action.unpinEditor",              // unpin
+            "m": "workbench.action.showAllEditors",           // menu
+            "R": "workbench.action.reopenClosedEditor",       // reopen
+            "1": "workbench.action.previousEditor",           // previous
+            "2": "workbench.action.nextEditor",               // next
+        },
+
         "v": { // viewport
             ".": {"command": "editorScroll", "args": {"to": "up", "by": "halfPage"}},
             ",": {"command": "editorScroll", "args": {"to": "down", "by": "halfPage"}},
             "<": {"command": "editorScroll", "args": {"to": "down", "by": "page"}},
             ">": {"command": "editorScroll", "args": {"to": "up", "by": "page"}},
+            "s": "editor.action.toggleStickyScroll", // sticky scroll
         },
 
         "m": { // move
@@ -88,16 +101,16 @@
         },
 
         "w": { // word
-            "d": "editor.action.goToDeclaration",          // declaration
             "r": "editor.action.rename",                   // rename
             "R": "editor.action.startFindReplaceAction",   // replace
-            "f": "references-view.find",                   // reference
-            "l": "editor.action.openLink",                 // link
-            "a": "wwm.aligncode",                          // align
+            "s": "actions.find",                           // search
             "c": "editor.action.clipboardCutAction",       // cut
+            "S": "editor.action.sortLinesAscending",       // sort
+            "l": "editor.action.openLink",                 // link
+            "d": "editor.action.goToDeclaration",          // declaration
             "h": "editor.action.showHover",                // hover
             "p": "editor.action.triggerParameterHints",    // parameters
-            "s": "editor.action.sortLinesAscending",       // sort
+            "a": "wwm.aligncode",                          // align
         },
 
         "s": { // select
@@ -105,16 +118,6 @@
             "b": "editor.action.selectToBracket",    // brackets
             "o": "editor.action.selectHighlights",   // occurence
             "c": "vimspired.cancelSelection",        // cancel
-        },
-
-        "S": { // sidebar
-            "e": "workbench.view.explorer",                    // explorer
-            "g": "workbench.view.scm",                         // git
-            "d": "workbench.view.debug",                       // debuger
-            "x": "workbench.view.extensions",                  // extensions
-            "s": "workbench.action.findInFiles",               // search
-            "r": "workbench.action.replaceInFiles",            // replace
-            " ": "workbench.action.toggleSidebarVisibility",   // toggle
         },
 
         "a": { // anchor
@@ -137,7 +140,6 @@
             "F": { // folder
                 "o": "workbench.action.files.openFolder",   // open
                 "c": "workbench.action.closeFolder",        // close
-                "n": "explorer.newFolder",                  // new
             },
             "f": { // file
                 "o": "workbench.action.files.openFile",              // open
@@ -150,12 +152,27 @@
                 "r": "editor.action.rename",                         // rename
                 "p": "copyFilePath",                                 // path
                 "P": "copyRelativeFilePath",                         // relative path
-                "n": "explorer.newFile",                             // new
+            },
+            "s": { // sidebar
+                "e": "workbench.view.explorer",                    // explorer
+                "g": "workbench.view.scm",                         // git
+                "d": "workbench.view.debug",                       // debuger
+                "x": "workbench.view.extensions",                  // extensions
+                "s": "workbench.action.findInFiles",               // search
+                "r": "workbench.action.replaceInFiles",            // replace
+                " ": "workbench.action.toggleSidebarVisibility",   // toggle
             },
             "c": { // commands
-                "r": "command-runner.run",              // run
                 "p": "workbench.action.showCommands",   // palette
                 "d": "workbench.action.debug.start",    // debug
+                "c": "command-runner.run",              // commands
+                "r": "code-runner.run",                 // run
+                "s": "code-runner.stop",                // stop
+            },
+            "C": { // console
+                "n": "workbench.action.terminal.new", // new
+                "k": "workbench.action.terminal.kill", // kill
+                "K": "workbench.action.terminal.killAll" // kill all
             },
             "g": { // git
                 "c": "git.commit",   // commit
@@ -170,6 +187,10 @@
                 "r": "workbench.action.reloadWindow",                // reload
                 "S": "workbench.action.openGlobalKeybindings",       // shortcuts
                 "w": "editor.action.toggleRenderWhitespace",         // whitespace
+            },
+            "w": { // web
+                "r": "extension.liveServer.goOnline",    // run
+                "s": "extension.liveServer.goOffline",   // stop
             }
         }
     },
@@ -179,12 +200,14 @@
     "vimspired.normalCursorStyle": "block",
     "material-icon-theme.hidesExplorerArrows": true,
     "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.showOnStatusbar": false,
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.host": "127.0.0.1",
     "C_Cpp.autocomplete": "Default",
     "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.debugShortcut": false,
     "C_Cpp.autoAddFileAssociations": true,
-    "C_Cpp.default.compilerPath": "C:\\Users\\Oasis\\Applications\\Clang\\bin\\gcc.exe",
-    "license.author": "Gael Lopes Da Silva",
+    "license.author": "your name",
     "license.extension": ".md",
     "license.year": "auto",
     "license.default": "MIT",
@@ -320,7 +343,7 @@
     "editor.folding": true,
     "editor.foldingHighlight": false,
     "editor.foldingStrategy": "auto",
-    "editor.fontFamily": "Cascadia Mono, monospace",
+    "editor.fontFamily": "Cascadia Mono, Jetbrains Mono",
     "editor.fontLigatures": false,
     "editor.fontSize": 18,
     "editor.fontWeight": "600",
@@ -423,6 +446,17 @@
         "key": "alt+f5",
         "command": "code-runner.stop",
         "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // NERDTree
+    {
+        "key": "ctrl+n",
+        "command": "nerdtree.unfocusSidebarOrClose",
+        "when": "filesExplorerFocus && sideBarVisible"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.terminal.toggleTerminal"
     },
 
     // Vimspired
