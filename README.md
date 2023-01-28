@@ -9,9 +9,9 @@
 ---
 
 ### 🖼️ Screenshots
-![](https://cdn.discordapp.com/attachments/594977170850447411/1002193478329061428/Capture_decran_2022-07-28_143318.png)
-![](https://cdn.discordapp.com/attachments/594977170850447411/1002193478719127633/Capture_decran_2022-07-28_143446.png)
-![](https://cdn.discordapp.com/attachments/594977170850447411/1002193479138545734/Capture_decran_2022-07-28_143710.png)
+![](./Screenshots/Screenshot1.png)
+![](./Screenshots/Screenshot2.png)
+![](./Screenshots/Screenshot3.png)
 
 ### 📃 Font
 - [Cascadia Mono](https://github.com/microsoft/cascadia-code)
