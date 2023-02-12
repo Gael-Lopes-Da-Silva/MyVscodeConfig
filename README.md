@@ -2,44 +2,57 @@
 
 ---
 
-<p align="center">⚙️ This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.</p>
+<p align="center">:gear: This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.</p>
 
-<p align="center">⚠️ I only added the extensions that change vs code, not the ones related to the languages.</p>
+<p align="center">:warning: I only added the extensions that change vs code, not the ones related to the languages.</p>
 
 ---
 
-### 🖼️ Screenshots
+### :framed_picture: Screenshots
 ![](./Screenshots/Screenshot1.png)
 ![](./Screenshots/Screenshot2.png)
 ![](./Screenshots/Screenshot3.png)
 
-### 📃 Font
+### :page_with_curl: Font
 - [Cascadia Mono](https://github.com/microsoft/cascadia-code)
 
-### 🏞️ Theme
+### :national_park: Theme
 - [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
 - [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
-### ⚙️ Extensions
-- [Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)
+### :gear: Extensions
+- [Auto Commit Message](https://marketplace.visualstudio.com/items?itemName=MichaelCurrin.auto-commit-msg)
+- [Batch Rename](https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension)
+- [Battery Indicator](https://marketplace.visualstudio.com/items?itemName=fbosch.battery-indicator)
+- [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
 - [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
+- [Clean Console](https://marketplace.visualstudio.com/items?itemName=Socram94.cleanconsole)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- [Color Blocks](https://marketplace.visualstudio.com/items?itemName=zimonitrome.color-blocks)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
+- [Emojify](https://marketplace.visualstudio.com/items?itemName=merciless.emojify)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [File System Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-filesystemtoolbox)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
+- [JAR Viewer](https://marketplace.visualstudio.com/items?itemName=wmanth.jar-viewer)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
 - [NERDTree](https://marketplace.visualstudio.com/items?itemName=Llam4u.nerdtree)
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
+- [Output Link to File](https://marketplace.visualstudio.com/items?itemName=93akkord.output-link-to-file)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
+- [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode)
+- [Studio Icons](https://marketplace.visualstudio.com/items?itemName=jtlowe.vscode-icon-theme)
+- [Text Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-texttoolbox)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 - [Vimspired](https://marketplace.visualstudio.com/items?itemName=bmalehorn.vimspired)
 
-### 🔧 Settings
+### :wrench: Settings
 ~~~json with comments
 {
     // keybindings
@@ -54,7 +67,6 @@
         "J": "cursorDownSelect",
         "H": "cursorLeftSelect",
         "L": "cursorRightSelect",
-        
         
         ">": "cursorTop",
         "<": "cursorBottom",
@@ -98,6 +110,8 @@
             "c": {"command": "cursorMove", "args": {"to": "viewPortCenter"}},
             ">": {"command": "cursorMove", "args": {"to": "viewPortTop"}}, 
             "<": {"command": "cursorMove", "args": {"to": "viewPortBottom"}},
+            "l": "workbench.action.gotoLine",     // line
+            "b": "editor.action.jumpToBracket",   // bracket
         },
 
         "w": { // word
@@ -110,7 +124,7 @@
             "d": "editor.action.goToDeclaration",          // declaration
             "h": "editor.action.showHover",                // hover
             "p": "editor.action.triggerParameterHints",    // parameters
-            "a": "wwm.aligncode",                          // align
+            "a": "vscode-better-align.align",              // align
         },
 
         "s": { // select
@@ -127,6 +141,11 @@
             "c": "editor.action.cancelSelectionAnchor",      // cancel
         },
 
+        "b": { // block
+            "a": "color-blocks.add",      // add
+            "t": "color-blocks.toggle",   // toggle
+        },
+
         "d": { // delete
             "s": "deleteLeft",                           // selection
             "l": "editor.action.deleteLines",            // line
@@ -136,10 +155,114 @@
             "R": "deleteAllRight",                       // right
         },
 
+        "t": { // text
+            "f": "vscode-texttoolbox.FilterLinesUsingRegExpOrString",   // filter
+            "S": "vscode-texttoolbox.SplitSelection",                   // split
+            "t": "vscode-texttoolbox.TabOut",                           // tab out
+            "T": "vscode-texttoolbox.ToggleTabOut",                     // tab out toggle
+            "O": "vscode-texttoolbox.transformToOrderedList",           // ordered list
+            
+            "a": { // align
+                "t": "vscode-texttoolbox.AlignAsTable",              // table
+                "h": "vscode-texttoolbox.AlignAsTableWithHeaders",   // header
+                "s": "vscode-texttoolbox.AlignToSeparator",          // separator
+            },
+            "c": { // conversion
+                "p": "vscode-texttoolbox.PascalCase",                    // pascal case
+                "c": "vscode-texttoolbox.CamelCase",                     // camel case
+                "C": "vscode-texttoolbox.ConstantCase",                  // constant case
+                "h": "vscode-texttoolbox.HeaderCase",                    // header case
+                "d": "vscode-texttoolbox.DotCase",                       // dot case
+                "k": "vscode-texttoolbox.KebabCase",                     // kebab case
+                "S": "vscode-texttoolbox.SentenceCase",                  // sentence case
+                "s": "vscode-texttoolbox.SnakeCase",                     // snake case
+                "i": "vscode-texttoolbox.InvertCase",                    // invert case
+                "H": "vscode-texttoolbox.ConvertDecimalToHexadecimal",   // hexadecimal
+                "D": "vscode-texttoolbox.ConvertHexadecimalToDecimal",   // decimal
+            },
+            "j": { // json
+                "f": "vscode-texttoolbox.FixJson",                 // format
+                "w": "vscode-texttoolbox.EscapeWin32PathInJson",   // win32
+                "m": "vscode-texttoolbox.MinifyJson",              // minify
+                "s": "vscode-texttoolbox.StringifyJson",           // stringify
+            },
+            "p": { // pad
+                "l": "vscode-texttoolbox.PadSelectionLeft",    // left
+                "r": "vscode-texttoolbox.PadSelectionRight",   // right
+            },
+            "P": { // path
+                "p": "vscode-texttoolbox.TransformPathToPosix",   // posix
+                "w": "vscode-texttoolbox.TransformPathToWin32",   // win32
+            },
+            "i": { // insert
+                "g": "vscode-texttoolbox.InsertGUID",              // guid
+                "G": "vscode-texttoolbox.InsertGuidAllZeros",      // guid zeros
+                "d": "vscode-texttoolbox.InsertDate",              // date
+                "r": "vscode-texttoolbox.PickRandom",              // random
+                "l": "vscode-texttoolbox.InsertLoremIpsum",        // lorem
+                "L": "vscode-texttoolbox.InsertLineNumbers",       // line number
+                "n": "vscode-texttoolbox.InsertSequenceNumbers",   // numbers sequece
+                "c": "vscode-texttoolbox.InsertCurrency",          // currency
+            },
+            "r": { // remove
+                "b": "vscode-texttoolbox.RemoveBrackets",                          // brackets
+                "q": "vscode-texttoolbox.RemoveQuotes",                            // quotes
+                "e": "vscode-texttoolbox.RemoveAllEmptyLines",                     // empty lines
+                "c": "vscode-texttoolbox.RemoveControlCharacters",                 // control characters
+                "d": "vscode-texttoolbox.RemoveDuplicateLines",                    // duplicates
+                "r": "vscode-texttoolbox.RemoveRedundantEmptyLines",               // redundant empty lines
+            },
+            "h": { // highlight
+                "h": "vscode-texttoolbox.HighlightText",            // highlight
+                "c": "vscode-texttoolbox.HighlightTextWithColor",   // color
+
+                "a": { // all
+                    "i": "vscode-texttoolbox.HighlightAllMatchesCaseInsensitive",            // insensitive
+                    "I": "vscode-texttoolbox.HighlightAllMatchesCaseInsensitiveWithColor",   // insensitive color
+                    "s": "vscode-texttoolbox.HighlightAllMatchesCaseSensitive",              // sensitive
+                    "S": "vscode-texttoolbox.HighlightAllMatchesCaseSensitiveWithColor",     // sensitive color
+                },
+                "r": { // remove
+                    "r": "vscode-texttoolbox.RemoveHighlight",       // remove
+                    "a": "vscode-texttoolbox.RemoveAllHighlights",   // all
+                },
+                "R": { // regex
+                    "r": "vscode-texttoolbox.HighlightWithRegExp",            // regex
+                    "R": "vscode-texttoolbox.HighlightWithRegExpWithColor",   // regex color
+                },
+            },
+            "s": { // sort
+                "l": "vscode-texttoolbox.SortLines",                            // lines
+                "e": "vscode-texttoolbox.SortLinesByLength",                    // length
+            },
+            "C": { // cycle
+                "b": "vscode-texttoolbox.CycleBrackets",   // brackets
+                "q": "vscode-texttoolbox.CycleQuotes",     // quotes
+            },
+            "o": { // open
+                "n": "vscode-texttoolbox.OpenSelectionInNewEditor", // new editor
+                "u": "vscode-texttoolbox.OpenSelectionInNewEditor", // under cursor
+            },
+            "e": { // encode
+                "b": "vscode-texttoolbox.convertToBase64",   // base64
+                "h": "vscode-texttoolbox.toHTML",            // html
+                "u": "vscode-texttoolbox.encodeUri",         // uri
+            },
+            "d": { // decode
+                "b": "vscode-texttoolbox.convertFromBase64",   // base64
+                "h": "vscode-texttoolbox.fromHTML",            // html
+                "u": "vscode-texttoolbox.decodeUri",           // uri
+                "j": "vscode-texttoolbox.decodeJWTToken",      // jwt
+            },
+        },
+
         " ": { // leader
             "F": { // folder
                 "o": "workbench.action.files.openFolder",   // open
                 "c": "workbench.action.closeFolder",        // close
+                "s": "extension.showFiles",                 // show
+                "h": "extension.hideFiles",                 // hide
+                "t": "extension.toggleFiles",               // toggle
             },
             "f": { // file
                 "o": "workbench.action.files.openFile",              // open
@@ -170,16 +293,18 @@
                 "s": "code-runner.stop",                // stop
             },
             "C": { // console
-                "n": "workbench.action.terminal.new", // new
-                "k": "workbench.action.terminal.kill", // kill
-                "K": "workbench.action.terminal.killAll" // kill all
+                "n": "workbench.action.terminal.new",       // new
+                "k": "workbench.action.terminal.kill",      // kill
+                "K": "workbench.action.terminal.killAll",   // kill all
+                "c": "cleanconsole.cleanConsole",           // clean log
             },
             "g": { // git
-                "c": "git.commit",   // commit
-                "p": "git.push",     // push
-                "P": "git.pull",     // pull
-                "C": "git.clone",    // clone
-                "i": "git.init",     // init
+                "c": "git.commit",           // commit
+                "p": "git.push",             // push
+                "P": "git.pull",             // pull
+                "C": "git.clone",            // clone
+                "i": "git.init",             // init
+                "a": "commitMsg.autofill",   // auto
             },
             "o": { // options
                 "s": "workbench.action.openSettingsJson",            // settings
@@ -196,27 +321,44 @@
     },
 
     // extensions
-    "vimspired.insertCursorStyle": "line",
-    "vimspired.normalCursorStyle": "block",
-    "material-icon-theme.hidesExplorerArrows": true,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.showOnStatusbar": false,
-    "liveServer.settings.port": 5500,
-    "liveServer.settings.host": "127.0.0.1",
-    "C_Cpp.autocomplete": "Default",
-    "C_Cpp.autocompleteAddParentheses": true,
-    "C_Cpp.debugShortcut": false,
     "C_Cpp.autoAddFileAssociations": true,
-    "license.author": "your name",
+    "C_Cpp.autocomplete": "default",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.debugShortcut": false,
+    "C_Cpp.default.compilerPath": "C:\\Users\\Oasis\\Applications\\Clang\\bin\\cc.exe",
+    "C_Cpp.enhancedColorization": "disabled",
+    "color-blocks.behavior.autoUpdate": true,
+    "color-blocks.behavior.enabled": true,
+    "color-blocks.commentLine.color": true,
+    "color-blocks.commentLine.commentFontWeight": "bold",
+    "color-blocks.wrapText.enabled": true,
+    "color-blocks.wrapText.padding": 1,
+    "license.author": "Gael Lopes Da Silva",
+    "license.default": "MIT",
     "license.extension": ".md",
     "license.year": "auto",
-    "license.default": "MIT",
-    "csharp.suppressBuildAssetsNotification": true,
-    "omnisharp.enableImportCompletion": true,
-    "omnisharp.organizeImportsOnFormat": true,
-    "omnisharp.autoStart": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.host": "127.0.0.1",
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.showOnStatusbar": false,
+    "material-icon-theme.hidesExplorerArrows": true,
+    "nim.enableNimsuggest": true,
+    "nim.nimprettyIndent": 2,
+    "nim.nimsuggestRestartTimeout": 60,
+    "nim.provider": "nimsuggest",
+    "php.completion.autoimport": "auto-import",
+    "php.completion.autoimport-docblock": "auto-import",
+    "php.completion.parameters": "parameters",
+    "php.highlight-todo.enable": true,
+    "polacode.target": "container",
+    "polacode.transparentBackground": true,
+    "vimspired.insertCursorStyle": "block",
+    "vimspired.normalCursorStyle": "underline",
     "code-runner.clearPreviousOutput": true,
     "code-runner.enableAppInsights": false,
+    "code-runner.fileDirectoryAsCwd": true,
     "code-runner.ignoreSelection": true,
     "code-runner.saveAllFilesBeforeRun": true,
     "code-runner.saveFileBeforeRun": true,
@@ -224,29 +366,20 @@
     "code-runner.showRunCommandInExplorerContextMenu": false,
     "code-runner.showRunIconInEditorTitleMenu": false,
     "code-runner.showStopIconInEditorTitleMenu": false,
-    "code-runner.fileDirectoryAsCwd": true,
     "code-runner.executorMapByGlob": {
-        "*.c"     : "cc $fullFileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+        "*.c"     : "cc $fullFileName -o $fileNameWithoutExt && $fileNameWithoutExt",
         "*.cs"    : "dotnet run $dir",
-        "*.go"    : "go run .",
+        "*.java"  : "javac $fullFileName && java $fileNameWithoutExt",
         "*.py"    : "python $fullFileName",
         "*.nim"   : "nim compile --run --hints:off --spellSuggest:0 $fullFileName",
         "*.nims"  : "nim --run --hints:off --spellSuggest:0 $fullFileName",
-        "*.java"  : "javac $fullFileName && java $fileNameWithoutExt",
         "*.sh"    : "sh $fullFileName",
-        "*.ts"    : "deno run $fullFileName",
         "makefile": "make $fullFileName"
     },
-    "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.autoClear": false, 
+    "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.cwd": "${fileDirname}",
     "command-runner.terminal.name": "script",
-    "markdown.extension.list.indentationSize": "inherit",
-    "markdown.extension.syntax.decorations": true,
-    "hexeditor.columnWidth": 16,
-    "hexeditor.showDecodedText": true,
-    "hexeditor.defaultEndianness": "little",
-    "hexeditor.inspectorType": "aside",
     "errorLens.enabled": true,
     "errorLens.followCursor": "allLines",
     "errorLens.gutterIconsEnabled": true,
@@ -254,6 +387,12 @@
     "errorLens.messageTemplate": "$severity: $message",
     "errorLens.removeLinebreaks": false,
     "errorLens.scrollbarHackEnabled": true,
+    "hexeditor.columnWidth": 16,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "hexeditor.showDecodedText": true,
+    "markdown.extension.list.indentationSize": "inherit",
+    "markdown.extension.theming.decoration.renderCodeSpan": true,
     "todohighlight.isEnable": true,
     "todohighlight.isCaseSensitive": true,
     "todohighlight.include": ["**/*.*"],
@@ -317,6 +456,40 @@
             }
         }
     ],
+
+    "[nim]": {
+        "editor.tabSize": 2,
+    },
+
+    // theme
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "token.info-token",
+                "settings": {
+                    "foreground": "#ffd900"
+                }
+            },
+            {
+                "scope": "token.warn-token",
+                "settings": {
+                    "foreground": "#ffd900"
+                }
+            },
+            {
+                "scope": "token.error-token",
+                "settings": {
+                    "foreground": "#ff80f4"
+                }
+            },
+            {
+                "scope": "token.debug-token",
+                "settings": {
+                    "foreground": "#ff80f4"
+                }
+            }
+        ]
+    },
     
     // options
     "breadcrumbs.enabled": true,
@@ -326,15 +499,15 @@
     "debug.terminal.clearBeforeReusing": true,
     "diffEditor.codeLens": true,
     "diffEditor.wordWrap": "inherit",
-    "editor.autoIndent": "full",
     "editor.autoClosingBrackets": "always",
     "editor.autoClosingQuotes": "always",
+    "editor.autoIndent": "full",
     "editor.bracketPairColorization.enabled": false,
     "editor.codeLens": true,
     "editor.colorDecorators": true,
-    "editor.cursorWidth": 3,
-    "editor.cursorStyle": "block",
     "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.cursorWidth": 3,
     "editor.detectIndentation": false,
     "editor.dragAndDrop": false,
     "editor.emptySelectionClipboard": true,
@@ -347,46 +520,66 @@
     "editor.fontLigatures": false,
     "editor.fontSize": 18,
     "editor.fontWeight": "600",
-    "editor.guides.indentation": true,
     "editor.guides.bracketPairs": false,
+    "editor.guides.indentation": true,
     "editor.hideCursorInOverviewRuler": false,
+    "editor.inlineSuggest.enabled": true,
+    "editor.inlineSuggest.showToolbar": "always",
     "editor.insertSpaces": true,
-    "editor.linkedEditing": false,
     "editor.largeFileOptimizations": true,
     "editor.letterSpacing": -0.3,
     "editor.lightbulb.enabled": false,
-    "editor.links": true,
     "editor.lineHeight": 24,
     "editor.lineNumbers": "relative",
+    "editor.linkedEditing": false,
+    "editor.links": true,
     "editor.matchBrackets": "always",
     "editor.minimap.enabled": false,
     "editor.overviewRulerBorder": false,
     "editor.padding.bottom": 1,
     "editor.padding.top": 1,
     "editor.quickSuggestionsDelay": 0,
-    "editor.renderWhitespace": "none",
     "editor.renderLineHighlight": "all",
-    "editor.suggestFontSize": 18,
-    "editor.suggestLineHeight": 24,
+    "editor.renderWhitespace": "none",
+    "editor.suggest.filterGraceful": true,
     "editor.suggest.insertMode": "replace",
+    "editor.suggest.matchOnWordStartOnly": true,
+    "editor.suggest.preview": false,
+    "editor.suggest.selectionMode": "always",
     "editor.tabSize": 4,
-    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.unicodeHighlight.includeComments": true,
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.unicodeHighlight.includeStrings": true,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 150,
     "editor.wrappingIndent": "same",
     "editor.wrappingStrategy": "simple",
-    "explorer.compactFolders": true,
+    "explorer.compactFolders": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.excludeGitIgnore": false,
     "explorer.incrementalNaming": "smart",
     "extensions.ignoreRecommendations": true,
     "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
     "files.defaultLanguage": "${activeEditorLanguage}",
     "files.enableTrash": true,
     "files.encoding": "utf8",
     "files.eol": "\n",
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.svn": true,
+        "**/CVS": true,
+        "**/Thumbs.db": true,
+        "**/bin": true,
+        "**/obj": true,
+        ".vscode": true
+    },
     "files.insertFinalNewline": true,
+    "files.refactoring.autoSave": true,
     "files.restoreUndoStack": true,
     "files.saveConflictResolution": "overwriteFileOnDisk",
     "files.simpleDialog.enable": true,
@@ -396,28 +589,31 @@
     "git.useEditorAsCommitInput": true,
     "security.workspace.trust.enabled": false,
     "terminal.integrated.customGlyphs": true,
-    "terminal.integrated.enableFileLinks": true,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.enableFileLinks": "on",
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
     "terminal.integrated.gpuAcceleration": "on",
-    "terminal.integrated.showLinkHover": true,
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.shellIntegration.enabled": true,
-    "window.dialogStyle": "custom",
-    "window.menuBarVisibility": "hidden",
-    "window.titleBarStyle": "custom",
-    "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${appName}",
+    "terminal.integrated.showLinkHover": true,
+    "window.commandCenter": false,
     "window.confirmBeforeClose": "keyboardOnly",
+    "window.dialogStyle": "custom",
     "window.enableMenuBarMnemonics": false,
     "window.experimental.windowControlsOverlay.enabled": true,
+    "window.menuBarVisibility": "hidden",
+    "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${appName}",
+    "window.titleBarStyle": "custom",
     "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
-    "workbench.editor.enablePreview": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.productIconTheme": "material-product-icons",
     "workbench.colorTheme": "Yellowed",
+    "workbench.commandPalette.experimental.suggestCommands": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "vscode-icon-theme",
+    "workbench.productIconTheme": "material-product-icons",
 }
 ~~~
 
-### ⌨️ Keybindings
+### :keyboard: Keybindings
 ~~~json with comments
 [
     // vscode
@@ -436,16 +632,29 @@
         "command": "editor.action.fontZoomReset",
         "when": "editorTextFocus && !editorReadonly"
     },
-    // code runner
     {
-        "key": "f5",
-        "command": "code-runner.run",
+        "key": "shift+alt+down",
+        "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "alt+f5",
-        "command": "code-runner.stop",
+        "key": "shift+alt+up",
+        "command": "editor.action.copyLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift shift",
+        "command": "workbench.action.showCommands"
+    },
+    
+    // code runner
+    {
+        "key": "f5",
+        "command": "code-runner.run"
+    },
+    {
+        "key": "alt+f5",
+        "command": "code-runner.stop"
     },
 
     // NERDTree
