@@ -1,10 +1,16 @@
-<h3 align="center">Visual Studio Code configuration</h3>
+<h3 align="center">
+    Visual Studio Code configuration
+</h3>
 
 ---
 
-<p align="center">:gear: This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.</p>
+<p align="center">
+    :gear: This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.
+</p>
 
-<p align="center">:warning: I only added the extensions that change vs code, not the ones related to the languages.</p>
+<p align="center">
+    :warning: I only added the extensions that change vs code, not the ones related to the languages.
+</p>
 
 ---
 
@@ -21,36 +27,37 @@
 - [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
 ### :gear: Extensions
-- [Auto Commit Message](https://marketplace.visualstudio.com/items?itemName=MichaelCurrin.auto-commit-msg)
 - [Batch Rename](https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension)
-- [Battery Indicator](https://marketplace.visualstudio.com/items?itemName=fbosch.battery-indicator)
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
 - [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
-- [Clean Console](https://marketplace.visualstudio.com/items?itemName=Socram94.cleanconsole)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
-- [Color Blocks](https://marketplace.visualstudio.com/items?itemName=zimonitrome.color-blocks)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
-- [Emojify](https://marketplace.visualstudio.com/items?itemName=merciless.emojify)
+- [Emoji Toolbok](https://marketplace.visualstudio.com/items?itemName=ecrax.emoji-toolbox)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Feather Product Icons](https://marketplace.visualstudio.com/items?itemName=melishev.feather-vscode)
 - [File System Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-filesystemtoolbox)
+- [File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils)
+- [Git History](https://marketplace.visualstudio.com/items?itemName=GuodongSun.vscode-git-cruise)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
 - [JAR Viewer](https://marketplace.visualstudio.com/items?itemName=wmanth.jar-viewer)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-- [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons)
+- [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
 - [NERDTree](https://marketplace.visualstudio.com/items?itemName=Llam4u.nerdtree)
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
 - [Output Link to File](https://marketplace.visualstudio.com/items?itemName=93akkord.output-link-to-file)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
 - [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode)
+- [Ressource Monitor](https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor)
 - [Studio Icons](https://marketplace.visualstudio.com/items?itemName=jtlowe.vscode-icon-theme)
 - [Text Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-texttoolbox)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 - [Vimspired](https://marketplace.visualstudio.com/items?itemName=bmalehorn.vimspired)
+- [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 
 ### :wrench: Settings
 ~~~json with comments
@@ -259,6 +266,7 @@
         " ": { // leader
             "F": { // folder
                 "o": "workbench.action.files.openFolder",   // open
+                "O": "revealFileInOS",                      // open exeplorer
                 "c": "workbench.action.closeFolder",        // close
                 "s": "extension.showFiles",                 // show
                 "h": "extension.hideFiles",                 // hide
@@ -328,13 +336,7 @@
     "C_Cpp.debugShortcut": false,
     "C_Cpp.default.compilerPath": "C:\\Users\\Oasis\\Applications\\Clang\\bin\\cc.exe",
     "C_Cpp.enhancedColorization": "disabled",
-    "color-blocks.behavior.autoUpdate": true,
-    "color-blocks.behavior.enabled": true,
-    "color-blocks.commentLine.color": true,
-    "color-blocks.commentLine.commentFontWeight": "bold",
-    "color-blocks.wrapText.enabled": true,
-    "color-blocks.wrapText.padding": 1,
-    "license.author": "Gael Lopes Da Silva",
+    "license.author": "Your name",
     "license.default": "MIT",
     "license.extension": ".md",
     "license.year": "auto",
@@ -343,11 +345,10 @@
     "liveServer.settings.host": "127.0.0.1",
     "liveServer.settings.port": 5500,
     "liveServer.settings.showOnStatusbar": false,
-    "material-icon-theme.hidesExplorerArrows": true,
     "nim.enableNimsuggest": true,
     "nim.nimprettyIndent": 2,
+    "nim.nimprettyMaxLineLen": 80,
     "nim.nimsuggestRestartTimeout": 60,
-    "nim.provider": "nimsuggest",
     "php.completion.autoimport": "auto-import",
     "php.completion.autoimport-docblock": "auto-import",
     "php.completion.parameters": "parameters",
@@ -368,6 +369,7 @@
     "code-runner.showStopIconInEditorTitleMenu": false,
     "code-runner.executorMapByGlob": {
         "*.c"     : "cc $fullFileName -o $fileNameWithoutExt && $fileNameWithoutExt",
+        "*.cpp"   : "cc $fullFileName -o $fileNameWithoutExt && $fileNameWithoutExt",
         "*.cs"    : "dotnet run $dir",
         "*.java"  : "javac $fullFileName && java $fileNameWithoutExt",
         "*.py"    : "python $fullFileName",
@@ -380,13 +382,16 @@
     "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.cwd": "${fileDirname}",
     "command-runner.terminal.name": "script",
+    "errorLens.delay": 0,
+    "errorLens.enableOnDiffView": true,
     "errorLens.enabled": true,
     "errorLens.followCursor": "allLines",
     "errorLens.gutterIconsEnabled": true,
     "errorLens.messageBackgroundMode": "none",
-    "errorLens.messageTemplate": "$severity: $message",
+    "errorLens.messageTemplate": "$count $severity: $message",
+    "errorLens.onSave": false,
     "errorLens.removeLinebreaks": false,
-    "errorLens.scrollbarHackEnabled": true,
+    "errorLens.scrollbarHackEnabled": false,
     "hexeditor.columnWidth": 16,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
@@ -458,6 +463,9 @@
     ],
 
     "[nim]": {
+        "editor.tabSize": 2,
+    },
+    "[nimble]": {
         "editor.tabSize": 2,
     },
 
@@ -547,10 +555,6 @@
     "editor.suggest.preview": false,
     "editor.suggest.selectionMode": "always",
     "editor.tabSize": 4,
-    "editor.unicodeHighlight.invisibleCharacters": true,
-    "editor.unicodeHighlight.includeComments": true,
-    "editor.unicodeHighlight.nonBasicASCII": true,
-    "editor.unicodeHighlight.includeStrings": true,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 150,
     "editor.wrappingIndent": "same",
@@ -568,12 +572,7 @@
     "files.encoding": "utf8",
     "files.eol": "\n",
     "files.exclude": {
-        "**/.DS_Store": true,
         "**/.git": true,
-        "**/.hg": true,
-        "**/.svn": true,
-        "**/CVS": true,
-        "**/Thumbs.db": true,
         "**/bin": true,
         "**/obj": true,
         ".vscode": true
@@ -600,8 +599,8 @@
     "window.dialogStyle": "custom",
     "window.enableMenuBarMnemonics": false,
     "window.experimental.windowControlsOverlay.enabled": true,
-    "window.menuBarVisibility": "hidden",
-    "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${appName}",
+    "window.menuBarVisibility": "toggle",
+    "window.title": "",
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
@@ -609,7 +608,8 @@
     "workbench.commandPalette.experimental.suggestCommands": true,
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "vscode-icon-theme",
-    "workbench.productIconTheme": "material-product-icons",
+    "workbench.productIconTheme": "feather-vscode",
+    "workbench.startupEditor": "none",
 }
 ~~~
 
@@ -716,7 +716,7 @@
     {
         "key": "ctrl+j",
         "command": "cursorMove",
-        "when": "vimspired.normal",
+        "when": "vimspired.normal && editorTextFocus",
         "args": {
             "to": "nextBlankLine"
         }
@@ -724,40 +724,40 @@
     {
         "key": "ctrl+k",
         "command": "cursorMove",
-        "when": "vimspired.normal",
+        "when": "vimspired.normal && editorTextFocus",
         "args": {
             "to": "prevBlankLine"
         }
     },
     {
         "key": "ctrl+h",
-        "command": "cursorWordLeft",
-        "when": "vimspired.normal"
+        "command": "cursorWordLeft && editorTextFocus",
+        "when": "vimspired.normal && editorTextFocus"
     },
     {
         "key": "ctrl+l",
-        "command": "cursorWordRight",
-        "when": "vimspired.normal"
+        "command": "cursorWordRight && editorTextFocus",
+        "when": "vimspired.normal && editorTextFocus"
     },
     {
         "key": "ctrl+alt+j",
         "command": "editor.action.insertCursorBelow",
-        "when": "vimspired.normal"
+        "when": "vimspired.normal && editorTextFocus"
     },
     {
         "key": "ctrl+alt+k",
         "command": "editor.action.insertCursorAbove",
-        "when": "vimspired.normal"
+        "when": "vimspired.normal && editorTextFocus"
     },
     {
         "key": "alt+j",
         "command": "editor.action.moveLinesDownAction",
-        "when": "vimspired.normal"
+        "when": "vimspired.normal && editorTextFocus"
     },
     {
         "key": "alt+k",
         "command": "editor.action.moveLinesUpAction",
-        "when": "vimspired.normal"
+        "when": "vimspired.normal && editorTextFocus"
     },
     {
         "key": "ctrl+shift+h",
