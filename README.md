@@ -15,9 +15,9 @@
 ---
 
 ### 🖼️ Screenshots
-![](./Screenshots/Screenshot1.png)
-![](./Screenshots/Screenshot2.png)
-![](./Screenshots/Screenshot3.png)
+![](./screenshots/screenshot1.png)
+![](./screenshots/screenshot2.png)
+![](./screenshots/screenshot3.png)
 
 ### 🗒️ Font
 - [Cascadia Mono](https://github.com/microsoft/cascadia-code)
