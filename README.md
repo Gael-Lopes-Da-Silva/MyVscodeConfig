@@ -5,28 +5,28 @@
 ---
 
 <p align="center">
-    :gear: This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.
+    ⚙️ This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.
 </p>
 
 <p align="center">
-    :warning: I only added the extensions that change vs code, not the ones related to the languages.
+    ❗ I only added the extensions that change vs code, not the ones related to the languages.
 </p>
 
 ---
 
-### :framed_picture: Screenshots
+### 🖼️ Screenshots
 ![](./Screenshots/Screenshot1.png)
 ![](./Screenshots/Screenshot2.png)
 ![](./Screenshots/Screenshot3.png)
 
-### :page_with_curl: Font
+### 🗒️ Font
 - [Cascadia Mono](https://github.com/microsoft/cascadia-code)
 
-### :national_park: Theme
+### 🏞️ Theme
 - [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
 - [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
-### :gear: Extensions
+### ⚙️ Extensions
 - [Batch Rename](https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension)
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
 - [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
@@ -59,7 +59,7 @@
 - [Vimspired](https://marketplace.visualstudio.com/items?itemName=bmalehorn.vimspired)
 - [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 
-### :wrench: Settings
+### 🔧 Settings
 ~~~json with comments
 {
     // keybindings
@@ -613,7 +613,7 @@
 }
 ~~~
 
-### :keyboard: Keybindings
+### ⌨️ Keybindings
 ~~~json with comments
 [
     // vscode
