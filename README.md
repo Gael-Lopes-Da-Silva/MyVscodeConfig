@@ -15,9 +15,9 @@
 ---
 
 ### 🖼️ Screenshots
-![](./screenshots/screenshot1.png)
-![](./screenshots/screenshot2.png)
-![](./screenshots/screenshot3.png)
+![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot1.png?raw=true)
+![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot2.png?raw=true)
+![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot3.png?raw=true)
 
 ### 🗒️ Font
 - [Cascadia Mono](https://github.com/microsoft/cascadia-code)
@@ -27,18 +27,22 @@
 - [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
 ### ⚙️ Extensions
+- [Azure Repos](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-repos)
 - [Batch Rename](https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension)
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
 - [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
+- [Dictionary Lookup](https://marketplace.visualstudio.com/items?itemName=Compulim.compulim-vscode-dictionary)
 - [Emoji Toolbok](https://marketplace.visualstudio.com/items?itemName=ecrax.emoji-toolbox)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Feather Product Icons](https://marketplace.visualstudio.com/items?itemName=melishev.feather-vscode)
 - [File System Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-filesystemtoolbox)
 - [File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils)
 - [Git History](https://marketplace.visualstudio.com/items?itemName=GuodongSun.vscode-git-cruise)
+- [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
+- [Indent 4-to-2](https://marketplace.visualstudio.com/items?itemName=Compulim.indent4to2)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
 - [JAR Viewer](https://marketplace.visualstudio.com/items?itemName=wmanth.jar-viewer)
@@ -52,6 +56,8 @@
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
 - [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode)
+- [QR Code Generator](https://marketplace.visualstudio.com/items?itemName=Compulim.vscode-qrcode)
+- [Remote Repositories](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories)
 - [Ressource Monitor](https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor)
 - [Studio Icons](https://marketplace.visualstudio.com/items?itemName=jtlowe.vscode-icon-theme)
 - [Text Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-texttoolbox)
@@ -74,12 +80,12 @@
         "J": "cursorDownSelect",
         "H": "cursorLeftSelect",
         "L": "cursorRightSelect",
-        
+
         ">": "cursorTop",
         "<": "cursorBottom",
         ".": "cursorEnd",
         ",": "cursorHome",
-        
+
         "/": "actions.find",
         ";": "editor.action.triggerSuggest",
         "c": ["editor.action.clipboardCopyAction", "vimspired.cancelSelection"],
@@ -115,7 +121,7 @@
             "j": {"command": "cursorMove", "args": {"to": "prevBlankLine"}},
             "k": {"command": "cursorMove", "args": {"to": "nextBlankLine"}},
             "c": {"command": "cursorMove", "args": {"to": "viewPortCenter"}},
-            ">": {"command": "cursorMove", "args": {"to": "viewPortTop"}}, 
+            ">": {"command": "cursorMove", "args": {"to": "viewPortTop"}},
             "<": {"command": "cursorMove", "args": {"to": "viewPortBottom"}},
             "l": "workbench.action.gotoLine",     // line
             "b": "editor.action.jumpToBracket",   // bracket
@@ -168,11 +174,12 @@
             "t": "vscode-texttoolbox.TabOut",                           // tab out
             "T": "vscode-texttoolbox.ToggleTabOut",                     // tab out toggle
             "O": "vscode-texttoolbox.transformToOrderedList",           // ordered list
-            
+
             "a": { // align
                 "t": "vscode-texttoolbox.AlignAsTable",              // table
                 "h": "vscode-texttoolbox.AlignAsTableWithHeaders",   // header
                 "s": "vscode-texttoolbox.AlignToSeparator",          // separator
+                "i": "4to2.convert4to2",                             // indent
             },
             "c": { // conversion
                 "p": "vscode-texttoolbox.PascalCase",                    // pascal case
@@ -210,6 +217,7 @@
                 "L": "vscode-texttoolbox.InsertLineNumbers",       // line number
                 "n": "vscode-texttoolbox.InsertSequenceNumbers",   // numbers sequece
                 "c": "vscode-texttoolbox.InsertCurrency",          // currency
+                "q": "qrcode.generateFromSelected",                // qr code
             },
             "r": { // remove
                 "b": "vscode-texttoolbox.RemoveBrackets",                          // brackets
@@ -307,12 +315,17 @@
                 "c": "cleanconsole.cleanConsole",           // clean log
             },
             "g": { // git
-                "c": "git.commit",           // commit
-                "p": "git.push",             // push
-                "P": "git.pull",             // pull
-                "C": "git.clone",            // clone
-                "i": "git.init",             // init
-                "a": "commitMsg.autofill",   // auto
+                "C": "git.clone",      // clone
+                "D": "git.cleanAll",   // discard all
+                "P": "git.pull",       // pull
+                "S": "git.stageAll",   // stage all
+                "c": "git.commit",     // commit
+                "d": "git.clean",      // discard
+                "f": "git.fetch",      // fetch
+                "i": "git.init",       // init
+                "p": "git.push",       // push
+                "s": "git.stage",      // stage
+
             },
             "o": { // options
                 "s": "workbench.action.openSettingsJson",            // settings
@@ -329,15 +342,16 @@
     },
 
     // extensions
+    "redhat.telemetry.enabled": false,
     "C_Cpp.autoAddFileAssociations": true,
     "C_Cpp.autocomplete": "default",
     "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.debugShortcut": false,
-    "C_Cpp.default.compilerPath": "C:\\Users\\Oasis\\Applications\\Clang\\bin\\cc.exe",
+    "C_Cpp.default.compilerPath": "Path to c compiler",
     "C_Cpp.enhancedColorization": "disabled",
     "license.author": "Your name",
-    "license.default": "MIT",
+    "license.default": "bsd-3-clause",
     "license.extension": ".md",
     "license.year": "auto",
     "liveServer.settings.donotShowInfoMsg": true,
@@ -378,16 +392,18 @@
         "*.sh"    : "sh $fullFileName",
         "makefile": "make $fullFileName"
     },
-    "command-runner.terminal.autoClear": false, 
+    "command-runner.terminal.autoClear": false,
     "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.cwd": "${fileDirname}",
     "command-runner.terminal.name": "script",
     "errorLens.delay": 0,
     "errorLens.enableOnDiffView": true,
     "errorLens.enabled": true,
+    "errorLens.enabledInMergeConflict": true,
     "errorLens.followCursor": "allLines",
+    "errorLens.gutterIconSet": "circle",
     "errorLens.gutterIconsEnabled": true,
-    "errorLens.messageBackgroundMode": "none",
+    "errorLens.messageBackgroundMode": "message",
     "errorLens.messageTemplate": "$count $severity: $message",
     "errorLens.onSave": false,
     "errorLens.removeLinebreaks": false,
@@ -498,7 +514,7 @@
             }
         ]
     },
-    
+
     // options
     "breadcrumbs.enabled": true,
     "breadcrumbs.filePath": "off",
@@ -555,6 +571,11 @@
     "editor.suggest.preview": false,
     "editor.suggest.selectionMode": "always",
     "editor.tabSize": 4,
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+    "editor.unicodeHighlight.includeComments": false,
+    "editor.unicodeHighlight.includeStrings": false,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 150,
     "editor.wrappingIndent": "same",
@@ -600,7 +621,7 @@
     "window.enableMenuBarMnemonics": false,
     "window.experimental.windowControlsOverlay.enabled": true,
     "window.menuBarVisibility": "toggle",
-    "window.title": "",
+    "window.title": "${rootName}",
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
