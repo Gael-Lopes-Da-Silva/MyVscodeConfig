@@ -5,28 +5,28 @@
 ---
 
 <p align="center">
-    ⚙️ This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.
+    :gear: This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.
 </p>
 
 <p align="center">
-    ❗ I only added the extensions that change vs code, not the ones related to the languages.
+    :question: I only added the extensions that change vs code, not the ones related to the languages.
 </p>
 
 ---
 
-### 🖼️ Screenshots
+### :framed_picture: Screenshots
 ![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot1.png?raw=true)
 ![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot2.png?raw=true)
 ![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot3.png?raw=true)
 
-### 🗒️ Font
+### :spiral_notepad: Font
 - [Cascadia Mono](https://github.com/microsoft/cascadia-code)
 
-### 🏞️ Theme
+### :national_park: Theme
 - [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
 - [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
-### ⚙️ Extensions
+### :gear: Extensions
 - [Azure Repos](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-repos)
 - [Batch Rename](https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension)
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
@@ -65,7 +65,7 @@
 - [Vimspired](https://marketplace.visualstudio.com/items?itemName=bmalehorn.vimspired)
 - [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 
-### 🔧 Settings
+### :wrench: Settings
 ~~~json with comments
 {
     // keybindings
@@ -634,7 +634,7 @@
 }
 ~~~
 
-### ⌨️ Keybindings
+### :keyboard: Keybindings
 ~~~json with comments
 [
     // vscode
