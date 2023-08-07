@@ -8,7 +8,7 @@
 > This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.
 
 > [!WARNING]
-> I only added the extensions that change vs code, not the ones related to the languages.
+> I only added extensions that change Visual Studio Code or add features, not the ones related to programming languages.
 
 ---
 
