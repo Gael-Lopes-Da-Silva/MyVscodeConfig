@@ -1,5 +1,5 @@
 <h1 align="center">
-    Visual Studio Code configuration
+    My Visual Studio Code configuration
 </h1>
 
 > [!NOTE]
