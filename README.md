@@ -1,8 +1,6 @@
-<h3 align="center">
+<h1 align="center">
     Visual Studio Code configuration
-</h3>
-
----
+</h1>
 
 > [!NOTE]
 > This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json and the keybinding extention.
@@ -10,21 +8,19 @@
 > [!WARNING]
 > I only added extensions that change Visual Studio Code or add features, not the ones related to programming languages.
 
----
-
-### :framed_picture: Screenshots
+## 🖼️ Screenshots
 ![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot1.png?raw=true)
 ![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot2.png?raw=true)
 ![](https://github.com/Gael-Lopes-Da-Silva/Yellowed/blob/5486fccb6685e7339403db535a4e35b5025511e7/screenshots/screenshot3.png?raw=true)
 
-### :spiral_notepad: Font
+## 🗒️ Font
 - [Cascadia Mono](https://github.com/microsoft/cascadia-code)
 
-### :national_park: Theme
+## 🏞️ Theme
 - [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
 - [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
 
-### :gear: Extensions
+## ⚙️ Extensions
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
 - [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
@@ -59,7 +55,7 @@
 - [TODO Highlight v2](https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight)
 - [Vimspired](https://marketplace.visualstudio.com/items?itemName=bmalehorn.vimspired)
 
-### :wrench: Settings
+## 🔧 Settings
 ~~~json with comments
 {
     // keybindings
@@ -675,7 +671,7 @@
 }
 ~~~
 
-### :keyboard: Keybindings
+## ⌨️ Keybindings
 ~~~json with comments
 [
     {
