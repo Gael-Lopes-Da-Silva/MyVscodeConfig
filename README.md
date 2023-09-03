@@ -10,6 +10,7 @@
 
 ## 🖼️ Screenshots
 ![](./screenshots/screenshot1.png)
+![](./screenshots/screenshot2.png)
 
 ## 🗒️ Font
 - [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)
@@ -22,6 +23,7 @@
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
 - [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [File System Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-filesystemtoolbox)
@@ -44,7 +46,6 @@
 - [Path Tools](https://marketplace.visualstudio.com/items?itemName=cg-cnu.vscode-path-tools)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
 - [Perfect Line Selection](https://marketplace.visualstudio.com/items?itemName=erhise.perfect-line-selection)
-- [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode)
 - [QR Code Generator](https://marketplace.visualstudio.com/items?itemName=Compulim.vscode-qrcode)
 - [Random Everthing](https://marketplace.visualstudio.com/items?itemName=helixquar.randomeverything)
 - [Remote Repositories](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories)
@@ -77,8 +78,6 @@
     "C_Cpp.enhancedColorization": "disabled",
     "java.inlayHints.parameterNames.enabled": "none",
     "Lua.semantic.enable": false,
-    "markdown.extension.list.indentationSize": "inherit",
-    "markdown.extension.theming.decoration.renderCodeSpan": true,
     "redhat.telemetry.enabled": false,
 
     // extensions
@@ -89,10 +88,10 @@
         "*.cpp": "clang++ $fullFileName -o $fileNameWithoutExt && $fileNameWithoutExt",
         "*.cs": "dotnet run --project $workspaceRoot",
         "*.java": "javac $fullFileName && java $fileNameWithoutExt",
-        "*.py": "python $fullFileName",
         "*.nim": "nim compile --run --hints:off --spellSuggest:0 $fullFileName",
         "*.nims": "nim --run --hints:off --spellSuggest:0 $fullFileName",
-        "*.sh": "sh $fullFileName",
+        "*.py": "python $fullFileName",
+        "*.sh": "sh $fullFileName"
     },
     "code-runner.fileDirectoryAsCwd": true,
     "code-runner.ignoreSelection": true,
@@ -102,6 +101,9 @@
     "code-runner.showRunCommandInExplorerContextMenu": false,
     "code-runner.showRunIconInEditorTitleMenu": false,
     "code-runner.showStopIconInEditorTitleMenu": false,
+    "codesnap.showLineNumbers": false,
+    "codesnap.showWindowControls": false,
+    "codesnap.transparentBackground": true,
     "command-runner.terminal.autoClear": false,
     "command-runner.terminal.autoFocus": true,
     "command-runner.terminal.cwd": "${fileDirname}",
@@ -123,24 +125,27 @@
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
     "hexeditor.showDecodedText": true,
-    "license.author": "Your name",****
+    "license.author": "Your name",
     "license.default": "bsd-3-clause",
     "license.extension": ".md",
     "license.year": "auto",
-    "polacode.target": "container",
-    "polacode.transparentBackground": true,
+    "markdown.extension.list.indentationSize": "inherit",
+    "markdown.extension.theming.decoration.renderCodeSpan": true,
     "terminalAllInOne.disableAllMessages": true,
     "terminalAllInOne.script.disableDescription": true,
     "terminalAllInOne.scripts": [],
-    "todohighlight.include": ["**/*.*"],
-    "todohighlight.isCaseSensitive": true,
     "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.include": ["**/*.*"],
+    "todohighlight.defaultStyle": {
+        "backgroundColor": "#00000000",
+        "fontWeight": "bold",
+        "isWholeLine": false
+    },
     "todohighlight.keywords": [
         {
             "text": "TODO",
             "color": "#f1c40f",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)TODO(?!\\w)"
             }
@@ -148,8 +153,6 @@
         {
             "text": "WARNING",
             "color": "#f1c40f",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)WARNING(?!\\w)"
             }
@@ -157,8 +160,6 @@
         {
             "text": "XXX",
             "color": "#f1c40f",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)XXX(?!\\w)"
             }
@@ -166,8 +167,6 @@
         {
             "text": "FIXME",
             "color": "#e74c3c",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)FIXME(?!\\w)"
             }
@@ -175,8 +174,6 @@
         {
             "text": "FIX",
             "color": "#e74c3c",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)FIX(?!\\w)"
             }
@@ -184,8 +181,6 @@
         {
             "text": "NOTE",
             "color": "#3498db",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)NOTE(?!\\w)"
             }
@@ -193,8 +188,6 @@
         {
             "text": "HACK",
             "color": "#9b59b6",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)HACK(?!\\w)"
             }
@@ -202,8 +195,6 @@
         {
             "text": "PERF",
             "color": "#9b59b6",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)PERF(?!\\w)"
             }
@@ -211,8 +202,6 @@
         {
             "text": "PERFORMANCE",
             "color": "#9b59b6",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)PERFORMANCE(?!\\w)"
             }
@@ -220,8 +209,6 @@
         {
             "text": "OPTIM",
             "color": "#9b59b6",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)OPTIM(?!\\w)"
             }
@@ -229,8 +216,6 @@
         {
             "text": "OPTIMIZE",
             "color": "#9b59b6",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)OPTIMIZE(?!\\w)"
             }
@@ -238,8 +223,6 @@
         {
             "text": "BUG",
             "color": "#2ecc71",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)BUG(?!\\w)"
             }
@@ -247,8 +230,6 @@
         {
             "text": "TESTING",
             "color": "#00ffea",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)TESTING(?!\\w)"
             }
@@ -256,8 +237,6 @@
         {
             "text": "PASSED",
             "color": "#00ff00",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)PASSED(?!\\w)"
             }
@@ -265,8 +244,6 @@
         {
             "text": "FAILED",
             "color": "#ff0000",
-            "fontWeight": "bold",
-            "backgroundColor": "#00000000",
             "regex": {
                 "pattern": "(?<=^|\"|:|\\s)FAILED(?!\\w)"
             }
@@ -358,7 +335,7 @@
     "explorer.incrementalNaming": "smart",
     "extensions.ignoreRecommendations": true,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 2000,
+    "files.autoSaveDelay": 1000,
     "files.enableTrash": true,
     "files.encoding": "utf8",
     "files.eol": "\n",
@@ -410,6 +387,7 @@
     "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
     "workbench.statusBar.visible": false,
+    "haskell.manageHLS": "PATH",
 }
 ~~~
 
