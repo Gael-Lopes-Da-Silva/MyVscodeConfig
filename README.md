@@ -12,9 +12,6 @@
 ![](./screenshots/screenshot1.png)
 ![](./screenshots/screenshot2.png)
 
-## 🗒️ Font
-- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)
-
 ## 🏞️ Theme
 - [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
 - [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
@@ -26,13 +23,11 @@
 - [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-- [File System Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-filesystemtoolbox)
-- [File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils)
+- [Even Better Comments](https://marketplace.visualstudio.com/items?itemName=Tion.evenbettercomments)
 - [Font Preview](https://marketplace.visualstudio.com/items?itemName=AdamRaichu.font-viewer)
 - [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub)
 - [Go To Method](https://marketplace.visualstudio.com/items?itemName=trixnz.go-to-method)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
-- [Increment Selection](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
 - [Jump](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
@@ -46,12 +41,8 @@
 - [Path Tools](https://marketplace.visualstudio.com/items?itemName=cg-cnu.vscode-path-tools)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
 - [Perfect Line Selection](https://marketplace.visualstudio.com/items?itemName=erhise.perfect-line-selection)
-- [QR Code Generator](https://marketplace.visualstudio.com/items?itemName=Compulim.vscode-qrcode)
-- [Random Everthing](https://marketplace.visualstudio.com/items?itemName=helixquar.randomeverything)
 - [Remote Repositories](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories)
-- [Terminal All In One](https://marketplace.visualstudio.com/items?itemName=yasht.terminal-all-in-one)
 - [Text Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-texttoolbox)
-- [TODO Highlight v2](https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight)
 
 ## 🔧 Settings
 ~~~json with comments
@@ -59,7 +50,9 @@
     // sync
     "settingsSync.ignoredSettings": [
         "-C_Cpp.default.compilerPath",
-        "terminal.external.windowsExec"
+        "terminal.external.windowsExec",
+        "zig.path",
+        "zig.zls.path"
     ],
 
     // theme
@@ -74,11 +67,13 @@
     "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.debugShortcut": false,
-    "C_Cpp.default.compilerPath": "Your path",
+    "C_Cpp.default.compilerPath": "C:\\Users\\Oasis\\Applications\\Mingw64\\bin\\clang.exe",
     "C_Cpp.enhancedColorization": "disabled",
-    "java.inlayHints.parameterNames.enabled": "none",
     "Lua.semantic.enable": false,
-    "redhat.telemetry.enabled": false,
+    "php.validate.executablePath": "C:\\Applications\\Laragon\\bin\\php\\php-8.1.10-Win32-vs16-x64\\php.exe",
+    "zig.initialSetupDone": true,
+    "zig.path": "",
+    "zig.zls.path": "",
 
     // extensions
     "code-runner.clearPreviousOutput": true,
@@ -121,134 +116,56 @@
     "errorLens.padding": "0px 10px 0px 10px",
     "errorLens.removeLinebreaks": false,
     "errorLens.scrollbarHackEnabled": true,
+    "evenbettercomments.enabled": true,
+    "evenbettercomments.highlightTagOnly": true,
+    "evenbettercomments.tags": [
+        {
+            "tag": "!",
+            "aliases": ["todo", "warning", "warn", "xxx"],
+            "color": "#f1c40f",
+            "backgroundColor": "transparent",
+            "bold": true,
+        },
+        {
+            "tag": "?",
+            "aliases": ["info", "note"],
+            "color": "#3498db",
+            "backgroundColor": "transparent",
+            "bold": true,
+        },
+        {
+            "tag": "$",
+            "aliases": ["fixme", "fix"],
+            "color": "#e74c3c",
+            "backgroundColor": "transparent",
+            "bold": true,
+        },
+        {
+            "tag": "@",
+            "aliases": ["hack", "perf", "performance", "optim", "optimize"],
+            "color": "#9b59b6",
+            "backgroundColor": "transparent",
+            "bold": true,
+        },
+        {
+            "tag": "%",
+            "aliases": ["bug"],
+            "color": "#2ecc71",
+            "backgroundColor": "transparent",
+            "bold": true,
+        },
+    ],
     "hexeditor.columnWidth": 17,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
     "hexeditor.showDecodedText": true,
-    "license.author": "Your name",
+    "license.author": "Gael Lopes Da Silva",
     "license.default": "bsd-3-clause",
     "license.extension": ".md",
     "license.year": "auto",
     "markdown.extension.list.indentationSize": "inherit",
     "markdown.extension.theming.decoration.renderCodeSpan": true,
-    "terminalAllInOne.disableAllMessages": true,
-    "terminalAllInOne.script.disableDescription": true,
-    "terminalAllInOne.scripts": [],
-    "todohighlight.isEnable": true,
-    "todohighlight.isCaseSensitive": true,
-    "todohighlight.include": ["**/*.*"],
-    "todohighlight.defaultStyle": {
-        "backgroundColor": "#00000000",
-        "fontWeight": "bold",
-        "isWholeLine": false
-    },
-    "todohighlight.keywords": [
-        {
-            "text": "TODO",
-            "color": "#f1c40f",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)TODO(?!\\w)"
-            }
-        },
-        {
-            "text": "WARNING",
-            "color": "#f1c40f",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)WARNING(?!\\w)"
-            }
-        },
-        {
-            "text": "XXX",
-            "color": "#f1c40f",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)XXX(?!\\w)"
-            }
-        },
-        {
-            "text": "FIXME",
-            "color": "#e74c3c",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)FIXME(?!\\w)"
-            }
-        },
-        {
-            "text": "FIX",
-            "color": "#e74c3c",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)FIX(?!\\w)"
-            }
-        },
-        {
-            "text": "NOTE",
-            "color": "#3498db",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)NOTE(?!\\w)"
-            }
-        },
-        {
-            "text": "HACK",
-            "color": "#9b59b6",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)HACK(?!\\w)"
-            }
-        },
-        {
-            "text": "PERF",
-            "color": "#9b59b6",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)PERF(?!\\w)"
-            }
-        },
-        {
-            "text": "PERFORMANCE",
-            "color": "#9b59b6",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)PERFORMANCE(?!\\w)"
-            }
-        },
-        {
-            "text": "OPTIM",
-            "color": "#9b59b6",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)OPTIM(?!\\w)"
-            }
-        },
-        {
-            "text": "OPTIMIZE",
-            "color": "#9b59b6",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)OPTIMIZE(?!\\w)"
-            }
-        },
-        {
-            "text": "BUG",
-            "color": "#2ecc71",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)BUG(?!\\w)"
-            }
-        },
-        {
-            "text": "TESTING",
-            "color": "#00ffea",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)TESTING(?!\\w)"
-            }
-        },
-        {
-            "text": "PASSED",
-            "color": "#00ff00",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)PASSED(?!\\w)"
-            }
-        },
-        {
-            "text": "FAILED",
-            "color": "#ff0000",
-            "regex": {
-                "pattern": "(?<=^|\"|:|\\s)FAILED(?!\\w)"
-            }
-        },
-    ],
+    "zig.zls.enableInlayHints": false,
 
     // settings
     "breadcrumbs.enabled": true,
@@ -266,8 +183,8 @@
     "editor.bracketPairColorization.enabled": false,
     "editor.codeLens": true,
     "editor.colorDecorators": true,
-    "editor.cursorBlinking": "solid",
-    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "blink",
+    "editor.cursorStyle": "line",
     "editor.cursorWidth": 3,
     "editor.definitionLinkOpensInPeek": false,
     "editor.detectIndentation": true,
@@ -279,7 +196,7 @@
     "editor.folding": false,
     "editor.foldingHighlight": false,
     "editor.foldingStrategy": "auto",
-    "editor.fontFamily": "JetBrains Mono, Cascadia Code, Source Code Pro",
+    "editor.fontFamily": "Cascadia Code, Source Code Pro",
     "editor.fontLigatures": true,
     "editor.fontSize": 18,
     "editor.gotoLocation.multipleDefinitions": "goto",
@@ -344,8 +261,6 @@
         "**/.git": true,
         "**/.godot": true,
         "**/.vs": true,
-        "**/bin": true,
-        "**/obj": true,
     },
     "files.insertFinalNewline": false,
     "files.refactoring.autoSave": true,
@@ -361,33 +276,31 @@
     "notebook.showFoldingControls": "always",
     "security.workspace.trust.enabled": false,
     "telemetry.telemetryLevel": "off",
-    "terminal.external.windowsExec": "Your path",
+    "terminal.external.windowsExec": "C:\\Applications\\Nushell\\nu.exe",
     "terminal.integrated.customGlyphs": true,
     "terminal.integrated.enableFileLinks": "on",
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.showLinkHover": true,
-    "terminal.integrated.tabFocusMode": false,
+    "window.commandCenter": false,
     "window.confirmBeforeClose": "keyboardOnly",
     "window.dialogStyle": "custom",
     "window.enableMenuBarMnemonics": false,
-    "window.experimental.windowControlsOverlay.enabled": true,
     "window.menuBarVisibility": "hidden",
     "window.title": "${rootName}",
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 0.8,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Yellowed Reborn",
     "workbench.commandPalette.experimental.suggestCommands": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.showTabs": false,
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.tabSizing": "shrink",
-    "workbench.iconTheme": "mizu",
     "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
     "workbench.statusBar.visible": false,
-    "haskell.manageHLS": "PATH",
+    "workbench.iconTheme": "mizu",
+    "workbench.colorTheme": "Yellowed Reborn",
 }
 ~~~
 
