@@ -18,66 +18,37 @@
 
 ## ⚙️ Extensions
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
-- [Better Cursors](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.better-cursors)
-- [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense)
-- [Clever VSCode](https://marketplace.visualstudio.com/items?itemName=davidbabel.Clever)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Even Better Comments](https://marketplace.visualstudio.com/items?itemName=Tion.evenbettercomments)
 - [Font Preview](https://marketplace.visualstudio.com/items?itemName=AdamRaichu.font-viewer)
-- [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub)
 - [Go To Method](https://marketplace.visualstudio.com/items?itemName=trixnz.go-to-method)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
 - [Jump](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
+- [Kakoune Mode](https://marketplace.visualstudio.com/items?itemName=reykjalin.vscode-kakoune)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
 - [Mizu Icons](https://marketplace.visualstudio.com/items?itemName=cdfzo.mizu)
-- [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)
-- [Output Link to File](https://marketplace.visualstudio.com/items?itemName=93akkord.output-link-to-file)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Path Tools](https://marketplace.visualstudio.com/items?itemName=cg-cnu.vscode-path-tools)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
 - [Remote Repositories](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories)
-- [Text Toolbox](https://marketplace.visualstudio.com/items?itemName=CarloCardella.vscode-texttoolbox)
+- [Text Utils](https://marketplace.visualstudio.com/items?itemName=itsbp.text-utils)
 
 ## 🔧 Settings
 ~~~json
 {
-	// sync
-	"settingsSync.ignoredSettings": [
-		"terminal.external.windowsExec",
-		"terminal.integrated.profiles.windows"
-	],
-	// theme
-	"editor.semanticHighlighting.enabled": false, // This disable the semantic highlighting
-	"editor.semanticTokenColorCustomizations": { // Same
+	// Theme
+	"editor.semanticHighlighting.enabled": false,
+	"editor.semanticTokenColorCustomizations": {
 		"enabled": false
 	},
 	// extensions
 	"code-runner.clearPreviousOutput": true,
-	"code-runner.enableAppInsights": false,
-	"code-runner.executorMapByGlob": {
-		"*.c": "clang $fullFileName -o $fileNameWithoutExt && $fileNameWithoutExt",
-		"*.cpp": "clang++ $fullFileName -o $fileNameWithoutExt && $fileNameWithoutExt",
-		"*.cs": "dotnet run --project $workspaceRoot",
-		"*.java": "javac $fullFileName && java $fileNameWithoutExt",
-		"*.nim": "nim compile --run --hints:off --spellSuggest:0 $fullFileName",
-		"*.nims": "nim --run --hints:off --spellSuggest:0 $fullFileName",
-		"*.py": "python $fullFileName",
-		"*.sh": "sh $fullFileName"
-	},
-	"code-runner.fileDirectoryAsCwd": true,
-	"code-runner.ignoreSelection": true,
-	"code-runner.saveAllFilesBeforeRun": true,
-	"code-runner.saveFileBeforeRun": true,
-	"code-runner.showRunCommandInEditorContextMenu": false,
-	"code-runner.showRunCommandInExplorerContextMenu": false,
-	"code-runner.showRunIconInEditorTitleMenu": false,
-	"code-runner.showStopIconInEditorTitleMenu": false,
 	"command-runner.terminal.autoClear": false,
 	"command-runner.terminal.autoFocus": true,
 	"command-runner.terminal.cwd": "${fileDirname}",
@@ -153,18 +124,14 @@
 			"bold": true,
 		},
 	],
-	"hexeditor.columnWidth": 17,
+	"hexeditor.columnWidth": 16,
 	"hexeditor.defaultEndianness": "little",
 	"hexeditor.inspectorType": "aside",
 	"hexeditor.showDecodedText": true,
-	"license.author": "Your name",
-	"license.default": "bsd-3-clause",
-	"license.extension": ".md",
-	"license.year": "auto",
 	"markdown.extension.list.indentationSize": "inherit",
 	"markdown.extension.theming.decoration.renderCodeSpan": true,
-	// settings
-	"breadcrumbs.enabled": true,
+	// Settings
+	"breadcrumbs.enabled": false,
 	"breadcrumbs.filePath": "off",
 	"breadcrumbs.icons": true,
 	"debug.console.closeOnEnd": true,
@@ -180,8 +147,8 @@
 	"editor.codeLens": true,
 	"editor.colorDecorators": true,
 	"editor.comments.insertSpace": true,
-	"editor.cursorBlinking": "blink",
-	"editor.cursorStyle": "line",
+	"editor.cursorBlinking": "solid",
+	"editor.cursorStyle": "block",
 	"editor.cursorWidth": 3,
 	"editor.definitionLinkOpensInPeek": false,
 	"editor.detectIndentation": false,
@@ -229,7 +196,7 @@
 	"editor.suggest.insertMode": "replace",
 	"editor.suggest.localityBonus": true,
 	"editor.suggest.matchOnWordStartOnly": true,
-	"editor.suggest.preview": true,
+	"editor.suggest.preview": false,
 	"editor.suggest.selectionMode": "always",
 	"editor.tabSize": 4,
 	"editor.unicodeHighlight.ambiguousCharacters": true,
@@ -254,10 +221,10 @@
 	"files.encoding": "utf8",
 	"files.eol": "\n",
 	"files.exclude": {
-		"**/.config": true,
 		"**/.git": true,
 		"**/.godot": true,
 		"**/.vs": true,
+		"**/zig-cache": true,
 	},
 	"files.insertFinalNewline": false,
 	"files.refactoring.autoSave": true,
@@ -273,17 +240,13 @@
 	"notebook.showFoldingControls": "always",
 	"security.workspace.trust.enabled": false,
 	"telemetry.telemetryLevel": "off",
-	"terminal.external.windowsExec": "Path to your shell executable",
+	"terminal.external.windowsExec": "bash",
 	"terminal.integrated.customGlyphs": true,
-	"terminal.integrated.defaultProfile.windows": "Nushell",
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"terminal.integrated.enableFileLinks": "on",
 	"terminal.integrated.fontSize": 18,
+	"terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font, Cascadia Code, Source Code Pro",
 	"terminal.integrated.gpuAcceleration": "on",
-	"terminal.integrated.profiles.windows": {
-		"Nushell": { // I use nushell, change this to change the integrated shell
-			"path": "nu",
-		}
-	},
 	"terminal.integrated.shellIntegration.enabled": true,
 	"terminal.integrated.showLinkHover": true,
 	"window.commandCenter": false,
@@ -297,9 +260,10 @@
 	"workbench.activityBar.location": "hidden",
 	"workbench.colorTheme": "Yellowed Reborn",
 	"workbench.commandPalette.experimental.suggestCommands": true,
+	"workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
 	"workbench.editor.enablePreview": false,
 	"workbench.editor.showTabs": "none",
-	"workbench.editor.tabCloseButton": "off",
+	"workbench.editor.tabActionCloseVisibility": false,
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.iconTheme": "mizu",
 	"workbench.layoutControl.enabled": false,
@@ -514,6 +478,11 @@
 		"key": "alt+k",
 		"command": "selectPrevSuggestion",
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "alt+\\",
+		"command": "editor.action.jumpToBracket",
+		"when": "editorTextFocus"
 	},
 	{
 		"key": "alt+enter",
