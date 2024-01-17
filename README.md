@@ -21,14 +21,9 @@
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-- [Even Better Comments](https://marketplace.visualstudio.com/items?itemName=Tion.evenbettercomments)
-- [Font Preview](https://marketplace.visualstudio.com/items?itemName=AdamRaichu.font-viewer)
-- [Go To Method](https://marketplace.visualstudio.com/items?itemName=trixnz.go-to-method)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
-- [Jump](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
-- [Kakoune Mode](https://marketplace.visualstudio.com/items?itemName=reykjalin.vscode-kakoune)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
@@ -36,7 +31,6 @@
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Path Tools](https://marketplace.visualstudio.com/items?itemName=cg-cnu.vscode-path-tools)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
-- [Remote Repositories](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories)
 - [Text Utils](https://marketplace.visualstudio.com/items?itemName=itsbp.text-utils)
 
 ## 🔧 Settings
@@ -66,64 +60,6 @@
 	"errorLens.padding": "0px 10px 0px 10px",
 	"errorLens.removeLinebreaks": false,
 	"errorLens.scrollbarHackEnabled": true,
-	"evenbettercomments.enabled": true,
-	"evenbettercomments.highlightTagOnly": true,
-	"evenbettercomments.tags": [
-		{
-			"tag": "!",
-			"aliases": [
-				"todo",
-				"warning",
-				"warn",
-				"xxx"
-			],
-			"color": "#f1c40f",
-			"backgroundColor": "transparent",
-			"bold": true,
-		},
-		{
-			"tag": "?",
-			"aliases": [
-				"info",
-				"note"
-			],
-			"color": "#3498db",
-			"backgroundColor": "transparent",
-			"bold": true,
-		},
-		{
-			"tag": "$",
-			"aliases": [
-				"fixme",
-				"fix"
-			],
-			"color": "#e74c3c",
-			"backgroundColor": "transparent",
-			"bold": true,
-		},
-		{
-			"tag": "@",
-			"aliases": [
-				"hack",
-				"perf",
-				"performance",
-				"optim",
-				"optimize"
-			],
-			"color": "#9b59b6",
-			"backgroundColor": "transparent",
-			"bold": true,
-		},
-		{
-			"tag": "%",
-			"aliases": [
-				"bug"
-			],
-			"color": "#2ecc71",
-			"backgroundColor": "transparent",
-			"bold": true,
-		},
-	],
 	"hexeditor.columnWidth": 16,
 	"hexeditor.defaultEndianness": "little",
 	"hexeditor.inspectorType": "aside",
@@ -168,7 +104,7 @@
 	"editor.guides.indentation": true,
 	"editor.hideCursorInOverviewRuler": false,
 	"editor.inlayHints.enabled": "on",
-	"editor.inlayHints.fontSize": 11,
+	"editor.inlayHints.fontSize": 14,
 	"editor.inlayHints.padding": true,
 	"editor.inlineSuggest.enabled": true,
 	"editor.inlineSuggest.showToolbar": "onHover",
@@ -212,6 +148,7 @@
 	"explorer.compactFolders": false,
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
+	"explorer.confirmPasteNative": false,
 	"explorer.excludeGitIgnore": false,
 	"explorer.incrementalNaming": "smart",
 	"extensions.ignoreRecommendations": true,
@@ -225,6 +162,7 @@
 		"**/.godot": true,
 		"**/.vs": true,
 		"**/zig-cache": true,
+		"**/zig-out": true,
 	},
 	"files.insertFinalNewline": false,
 	"files.refactoring.autoSave": true,
@@ -258,7 +196,6 @@
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0.8,
 	"workbench.activityBar.location": "hidden",
-	"workbench.colorTheme": "Yellowed Reborn",
 	"workbench.commandPalette.experimental.suggestCommands": true,
 	"workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
 	"workbench.editor.enablePreview": false,
@@ -269,6 +206,7 @@
 	"workbench.layoutControl.enabled": false,
 	"workbench.startupEditor": "none",
 	"workbench.statusBar.visible": false,
+	"workbench.colorTheme": "Yellowed Reborn",
 }
 ~~~
 
@@ -294,19 +232,87 @@
 	},
 	// Keymap
 	{
-		"key": "alt+p",
-		"command": "workbench.action.quickOpen"
+		"key": "alt+j",
+		"command": "cursorDown",
+		"when": "textInputFocus"
 	},
 	{
-		"key": "alt+o",
-		"command": "workbench.action.files.openFile"
+		"key": "alt+k",
+		"command": "cursorUp",
+		"when": "textInputFocus"
 	},
 	{
-		"key": "alt+shift+o",
-		"command": "workbench.action.files.openFolder"
+		"key": "alt+h",
+		"command": "cursorLeft",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+l",
+		"command": "cursorRight",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+j",
+		"command": "cursorDownSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+k",
+		"command": "cursorUpSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+h",
+		"command": "cursorLeftSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+l",
+		"command": "cursorRightSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+j",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "alt+k",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "alt+j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "alt+k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
 	},
 	{
 		"key": "alt+b",
+		"command": "cursorWordLeft",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+w",
+		"command": "cursorWordRight",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+b",
+		"command": "cursorWordLeftSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+w",
+		"command": "cursorWordRightSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+q",
 		"command": "workbench.action.toggleSidebarVisibility"
 	},
 	{
@@ -320,7 +326,7 @@
 		"when": "textInputFocus"
 	},
 	{
-		"key": "alt+v",
+		"key": "alt+x",
 		"command": "expandLineSelection",
 		"when": "textInputFocus"
 	},
@@ -330,9 +336,16 @@
 		"when": "terminal.active"
 	},
 	{
+		"key": "alt+p",
+		"command": "editor.action.clipboardPasteAction"
+	},
+	{
+		"key": "alt+y",
+		"command": "editor.action.clipboardCopyAction"
+	},
+	{
 		"key": "alt+i",
-		"command": "editor.action.insertSnippet",
-		"when": "!editorReadonly && !editorReadonly"
+		"command": "workbench.action.quickOpen"
 	},
 	{
 		"key": "alt+/",
@@ -400,86 +413,6 @@
 		"command": "workbench.action.gotoLine"
 	},
 	{
-		"key": "alt+j",
-		"command": "cursorDown",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+k",
-		"command": "cursorUp",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+h",
-		"command": "cursorLeft",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+l",
-		"command": "cursorRight",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+j",
-		"command": "cursorDownSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+k",
-		"command": "cursorUpSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+h",
-		"command": "cursorLeftSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+l",
-		"command": "cursorRightSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+ctrl+h",
-		"command": "cursorWordLeft",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+ctrl+l",
-		"command": "cursorWordRight",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+ctrl+h",
-		"command": "cursorWordLeftSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+ctrl+l",
-		"command": "cursorWordRightSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+j",
-		"command": "workbench.action.quickOpenSelectNext",
-		"when": "inQuickOpen"
-	},
-	{
-		"key": "alt+k",
-		"command": "workbench.action.quickOpenSelectPrevious",
-		"when": "inQuickOpen"
-	},
-	{
-		"key": "alt+j",
-		"command": "selectNextSuggestion",
-		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-	},
-	{
-		"key": "alt+k",
-		"command": "selectPrevSuggestion",
-		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-	},
-	{
 		"key": "alt+\\",
 		"command": "editor.action.jumpToBracket",
 		"when": "editorTextFocus"
@@ -508,6 +441,16 @@
 		"key": "alt+shift+c",
 		"command": "editor.action.insertCursorAbove",
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+o",
+		"command": "editor.action.insertLineAfter",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "alt+shift+o",
+		"command": "editor.action.insertLineBefore",
+		"when": "editorTextFocus && !editorReadonly"
 	},
 ]
 ~~~
