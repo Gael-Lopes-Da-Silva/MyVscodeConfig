@@ -27,11 +27,11 @@
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
-- [Mizu Icons](https://marketplace.visualstudio.com/items?itemName=cdfzo.mizu)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Path Tools](https://marketplace.visualstudio.com/items?itemName=cg-cnu.vscode-path-tools)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
 - [Text Utils](https://marketplace.visualstudio.com/items?itemName=itsbp.text-utils)
+- [Ultimate Hover](https://marketplace.visualstudio.com/items?itemName=szpro.ultimatehover)
 
 ## 🔧 Settings
 ~~~json
@@ -70,8 +70,9 @@
 	"breadcrumbs.enabled": false,
 	"breadcrumbs.filePath": "off",
 	"breadcrumbs.icons": true,
-	"debug.console.closeOnEnd": true,
-	"debug.openDebug": "neverOpen",
+	"debug.console.closeOnEnd": false,
+	"debug.internalConsoleOptions": "openOnSessionStart",
+	"debug.openDebug": "openOnDebugBreak",
 	"debug.saveBeforeStart": "allEditorsInActiveGroup",
 	"debug.terminal.clearBeforeReusing": true,
 	"diffEditor.codeLens": true,
@@ -97,8 +98,9 @@
 	"editor.foldingHighlight": false,
 	"editor.foldingStrategy": "auto",
 	"editor.fontFamily": "Cascadia Code, Source Code Pro",
-	"editor.fontLigatures": true,
+	"editor.fontLigatures": false,
 	"editor.fontSize": 18,
+	"editor.formatOnSave": true,
 	"editor.gotoLocation.multipleDefinitions": "goto",
 	"editor.guides.bracketPairs": false,
 	"editor.guides.indentation": true,
@@ -111,7 +113,7 @@
 	"editor.insertSpaces": false,
 	"editor.largeFileOptimizations": true,
 	"editor.letterSpacing": 0.2,
-	"editor.lightbulb.enabled": false,
+	"editor.lightbulb.enabled": "off",
 	"editor.lineHeight": 22,
 	"editor.lineNumbers": "off",
 	"editor.linkedEditing": false,
@@ -162,14 +164,14 @@
 		"**/.godot": true,
 		"**/.vs": true,
 		"**/zig-cache": true,
-		"**/zig-out": true,
+		"**/zig-out": true
 	},
 	"files.insertFinalNewline": false,
 	"files.refactoring.autoSave": true,
 	"files.restoreUndoStack": true,
 	"files.saveConflictResolution": "overwriteFileOnDisk",
 	"files.simpleDialog.enable": true,
-	"git.autofetch": true,
+	"git.autofetch": "all",
 	"git.closeDiffOnOperation": true,
 	"git.confirmSync": false,
 	"git.enableSmartCommit": true,
@@ -178,12 +180,12 @@
 	"notebook.showFoldingControls": "always",
 	"security.workspace.trust.enabled": false,
 	"telemetry.telemetryLevel": "off",
-	"terminal.external.windowsExec": "bash",
+	"terminal.external.windowsExec": "pwsh",
 	"terminal.integrated.customGlyphs": true,
-	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"terminal.integrated.defaultProfile.windows": "PowerShell",
 	"terminal.integrated.enableFileLinks": "on",
-	"terminal.integrated.fontSize": 18,
 	"terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font, Cascadia Code, Source Code Pro",
+	"terminal.integrated.fontSize": 18,
 	"terminal.integrated.gpuAcceleration": "on",
 	"terminal.integrated.shellIntegration.enabled": true,
 	"terminal.integrated.showLinkHover": true,
@@ -196,17 +198,17 @@
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0.8,
 	"workbench.activityBar.location": "hidden",
+	"workbench.colorTheme": "Yellowed Reborn",
 	"workbench.commandPalette.experimental.suggestCommands": true,
 	"workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
 	"workbench.editor.enablePreview": false,
 	"workbench.editor.showTabs": "none",
 	"workbench.editor.tabActionCloseVisibility": false,
 	"workbench.editor.tabSizing": "shrink",
-	"workbench.iconTheme": "mizu",
+	"workbench.iconTheme": "yellowed_icons",
 	"workbench.layoutControl.enabled": false,
 	"workbench.startupEditor": "none",
-	"workbench.statusBar.visible": false,
-	"workbench.colorTheme": "Yellowed Reborn",
+	"workbench.statusBar.visible": false
 }
 ~~~
 
@@ -297,6 +299,16 @@
 		"when": "textInputFocus"
 	},
 	{
+		"key": "alt+d",
+		"command": "deleteRight",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+d",
+		"command": "deleteInsideWord",
+		"when": "textInputFocus"
+	},
+	{
 		"key": "alt+w",
 		"command": "cursorWordRight",
 		"when": "textInputFocus"
@@ -324,6 +336,11 @@
 		"key": "alt+f",
 		"command": "editor.action.showDefinitionPreviewHover",
 		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+shift+f",
+		"command": "editor.action.triggerParameterHints",
+		"when": "editorHasSignatureHelpProvider && editorTextFocus"
 	},
 	{
 		"key": "alt+x",
