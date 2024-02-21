@@ -1,12 +1,10 @@
-<h1 align="center">
-    My Visual Studio Code configuration
-</h1>
+<div align="center">
+	<h1>My Visual Studio Code configuration</h1>
+</div>
 
-> [!NOTE]
-> This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json or the keybinding extentions.
+### 🗒️ This is my configuration for Visual Studio Code. The key bindings can be difficult to understand. You can see with the keybindings.json or the keybinding extentions.
 
-> [!WARNING]
-> I only added extensions that change Visual Studio Code or add features, I have not added the ones related to programming languages. Same for the settings.
+### ❗ I only added extensions that change Visual Studio Code or add features, I have not added the ones related to programming languages. Same for the settings.
 
 ## 🖼️ Screenshots
 ![](./screenshots/screenshot1.png)
