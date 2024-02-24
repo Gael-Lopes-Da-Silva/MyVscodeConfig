@@ -12,23 +12,22 @@
 
 ## 🏞️ Theme
 - [Yellowed Marketplace](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.yellowed)
-- [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/Yellowed)
+- [Yellowed Github](https://github.com/Gael-Lopes-Da-Silva/YellowedVSCode)
 
 ## ⚙️ Extensions
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)
-- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 - [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 - [IntelliCode Completions](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode-completions)
+- [Keybinded](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.keybinded)
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-- [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [Path Tools](https://marketplace.visualstudio.com/items?itemName=cg-cnu.vscode-path-tools)
 - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden)
-- [Text Utils](https://marketplace.visualstudio.com/items?itemName=itsbp.text-utils)
+- [Todoed](https://marketplace.visualstudio.com/items?itemName=gael-lopes-da-silva.todoed)
 - [Ultimate Hover](https://marketplace.visualstudio.com/items?itemName=szpro.ultimatehover)
 
 ## 🔧 Settings
@@ -40,7 +39,6 @@
 		"enabled": false
 	},
 	// extensions
-	"code-runner.clearPreviousOutput": true,
 	"command-runner.terminal.autoClear": false,
 	"command-runner.terminal.autoFocus": true,
 	"command-runner.terminal.cwd": "${fileDirname}",
@@ -70,7 +68,7 @@
 	"breadcrumbs.icons": true,
 	"debug.console.closeOnEnd": false,
 	"debug.internalConsoleOptions": "openOnSessionStart",
-	"debug.openDebug": "openOnDebugBreak",
+	"debug.openDebug": "neverOpen",
 	"debug.saveBeforeStart": "allEditorsInActiveGroup",
 	"debug.terminal.clearBeforeReusing": true,
 	"diffEditor.codeLens": true,
@@ -191,7 +189,7 @@
 	"window.confirmBeforeClose": "keyboardOnly",
 	"window.dialogStyle": "custom",
 	"window.enableMenuBarMnemonics": false,
-	"window.menuBarVisibility": "hidden",
+	"window.menuBarVisibility": "compact",
 	"window.title": "${rootName}",
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0.8,
@@ -199,14 +197,16 @@
 	"workbench.colorTheme": "Yellowed Reborn",
 	"workbench.commandPalette.experimental.suggestCommands": true,
 	"workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
+	"workbench.editor.editorActionsLocation": "hidden",
 	"workbench.editor.enablePreview": false,
 	"workbench.editor.showTabs": "none",
 	"workbench.editor.tabActionCloseVisibility": false,
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.iconTheme": "yellowed_icons",
 	"workbench.layoutControl.enabled": false,
+	"workbench.sideBar.location": "left",
 	"workbench.startupEditor": "none",
-	"workbench.statusBar.visible": false
+	"workbench.statusBar.visible": false,
 }
 ~~~
 
@@ -229,243 +229,6 @@
 	{
 		"key": "ctrl+-",
 		"command": "editor.action.fontZoomOut"
-	},
-	// Keymap
-	{
-		"key": "alt+j",
-		"command": "cursorDown",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+k",
-		"command": "cursorUp",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+h",
-		"command": "cursorLeft",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+l",
-		"command": "cursorRight",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+j",
-		"command": "cursorDownSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+k",
-		"command": "cursorUpSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+h",
-		"command": "cursorLeftSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+l",
-		"command": "cursorRightSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+j",
-		"command": "workbench.action.quickOpenSelectNext",
-		"when": "inQuickOpen"
-	},
-	{
-		"key": "alt+k",
-		"command": "workbench.action.quickOpenSelectPrevious",
-		"when": "inQuickOpen"
-	},
-	{
-		"key": "alt+j",
-		"command": "selectNextSuggestion",
-		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-	},
-	{
-		"key": "alt+k",
-		"command": "selectPrevSuggestion",
-		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-	},
-	{
-		"key": "alt+b",
-		"command": "cursorWordLeft",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+d",
-		"command": "deleteRight",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+d",
-		"command": "deleteInsideWord",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+w",
-		"command": "cursorWordRight",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+b",
-		"command": "cursorWordLeftSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+w",
-		"command": "cursorWordRightSelect",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+q",
-		"command": "workbench.action.toggleSidebarVisibility"
-	},
-	{
-		"key": "alt+s",
-		"command": "editor.action.addSelectionToNextFindMatch",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+f",
-		"command": "editor.action.showDefinitionPreviewHover",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+shift+f",
-		"command": "editor.action.triggerParameterHints",
-		"when": "editorHasSignatureHelpProvider && editorTextFocus"
-	},
-	{
-		"key": "alt+x",
-		"command": "expandLineSelection",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+n",
-		"command": "workbench.action.terminal.toggleTerminal",
-		"when": "terminal.active"
-	},
-	{
-		"key": "alt+p",
-		"command": "editor.action.clipboardPasteAction"
-	},
-	{
-		"key": "alt+y",
-		"command": "editor.action.clipboardCopyAction"
-	},
-	{
-		"key": "alt+i",
-		"command": "workbench.action.quickOpen"
-	},
-	{
-		"key": "alt+/",
-		"command": "editor.action.commentLine",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "alt+'",
-		"command": "editor.action.triggerSuggest",
-		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-	},
-	{
-		"key": "alt+'",
-		"command": "toggleSuggestionDetails",
-		"when": "suggestWidgetVisible && textInputFocus"
-	},
-	{
-		"key": "alt+u",
-		"command": "undo"
-	},
-	{
-		"key": "alt+shift+u",
-		"command": "redo"
-	},
-	{
-		"key": "ctrl+j ctrl+e",
-		"command": "workbench.view.explorer",
-		"when": "viewContainer.workbench.view.explorer.enabled"
-	},
-	{
-		"key": "ctrl+j ctrl+g",
-		"command": "workbench.view.scm",
-		"when": "workbench.scm.active"
-	},
-	{
-		"key": "ctrl+j ctrl+b",
-		"command": "workbench.action.toggleActivityBarVisibility"
-	},
-	{
-		"key": "ctrl+j ctrl+z",
-		"command": "workbench.action.toggleZenMode"
-	},
-	{
-		"key": "alt+g alt+l",
-		"command": "cursorEnd",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+g alt+h",
-		"command": "cursorHome",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+g alt+k",
-		"command": "cursorTop",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+g alt+j",
-		"command": "cursorBottom",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "alt+g alt+g",
-		"command": "workbench.action.gotoLine"
-	},
-	{
-		"key": "alt+\\",
-		"command": "editor.action.jumpToBracket",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "alt+enter",
-		"command": "editor.action.insertLineAfter",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "alt+shift+enter",
-		"command": "editor.action.insertLineBefore",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "alt+backspace",
-		"command": "editor.action.deleteLines",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "alt+c",
-		"command": "editor.action.insertCursorBelow",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "alt+shift+c",
-		"command": "editor.action.insertCursorAbove",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "alt+o",
-		"command": "editor.action.insertLineAfter",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "alt+shift+o",
-		"command": "editor.action.insertLineBefore",
-		"when": "editorTextFocus && !editorReadonly"
-	},
+	}
 ]
 ~~~
